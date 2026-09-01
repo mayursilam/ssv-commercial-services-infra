@@ -1,12 +1,22 @@
-<!DOCTYPE html>
+const fs = require('fs');
+const path = require('path');
+
+// Helper to generate the common HTML shell
+function renderPage({
+  title,
+  description,
+  activeNav,
+  pageContent
+}) {
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrated Services | Security, Housekeeping & Infrastructure | SSV</title>
-  <meta name="description" content="Explore the complete service portfolio of SSV Commercial Services & Infra Private Limited - professional security guarding, hospital-grade cleaning, and turnkey civil infrastructure.">
-  <meta property="og:title" content="Integrated Services | Security, Housekeeping & Infrastructure | SSV">
-  <meta property="og:description" content="Explore the complete service portfolio of SSV Commercial Services & Infra Private Limited - professional security guarding, hospital-grade cleaning, and turnkey civil infrastructure.">
+  <title>${title}</title>
+  <meta name="description" content="${description}">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -42,15 +52,15 @@
       <!-- Desktop Navigation -->
       <nav class="nav-desktop" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li><a href="index.html" class="nav-link ">Home</a></li>
-          <li><a href="about.html" class="nav-link ">About SSV</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
-          <li><a href="security.html" class="nav-link ">Security</a></li>
-          <li><a href="housekeeping.html" class="nav-link ">Housekeeping</a></li>
-          <li><a href="infrastructure.html" class="nav-link ">Infra</a></li>
-          <li><a href="industries.html" class="nav-link ">Industries</a></li>
-          <li><a href="why-ssv.html" class="nav-link ">Why SSV</a></li>
-          <li><a href="contact.html" class="nav-link ">Contact</a></li>
+          <li><a href="index.html" class="nav-link ${activeNav === 'home' ? 'active' : ''}">Home</a></li>
+          <li><a href="about.html" class="nav-link ${activeNav === 'about' ? 'active' : ''}">About SSV</a></li>
+          <li><a href="services.html" class="nav-link ${activeNav === 'services' ? 'active' : ''}">Services</a></li>
+          <li><a href="security.html" class="nav-link ${activeNav === 'security' ? 'active' : ''}">Security</a></li>
+          <li><a href="housekeeping.html" class="nav-link ${activeNav === 'housekeeping' ? 'active' : ''}">Housekeeping</a></li>
+          <li><a href="infrastructure.html" class="nav-link ${activeNav === 'infra' ? 'active' : ''}">Infra</a></li>
+          <li><a href="industries.html" class="nav-link ${activeNav === 'industries' ? 'active' : ''}">Industries</a></li>
+          <li><a href="why-ssv.html" class="nav-link ${activeNav === 'why-ssv' ? 'active' : ''}">Why SSV</a></li>
+          <li><a href="contact.html" class="nav-link ${activeNav === 'contact' ? 'active' : ''}">Contact</a></li>
         </ul>
       </nav>
 
@@ -72,15 +82,15 @@
     <!-- Mobile Nav Panel -->
     <div class="mobile-nav-panel" id="mobileNavPanel">
       <ul class="mobile-nav-list">
-        <li><a href="index.html" class="mobile-nav-link ">Home</a></li>
-        <li><a href="about.html" class="mobile-nav-link ">About SSV</a></li>
-        <li><a href="services.html" class="mobile-nav-link active">All Services</a></li>
-        <li><a href="security.html" class="mobile-nav-link ">Security Services</a></li>
-        <li><a href="housekeeping.html" class="mobile-nav-link ">Housekeeping Services</a></li>
-        <li><a href="infrastructure.html" class="mobile-nav-link ">Infra & Civil Services</a></li>
-        <li><a href="industries.html" class="mobile-nav-link ">Industries Served</a></li>
-        <li><a href="why-ssv.html" class="mobile-nav-link ">Why Choose SSV</a></li>
-        <li><a href="contact.html" class="mobile-nav-link ">Contact Us</a></li>
+        <li><a href="index.html" class="mobile-nav-link ${activeNav === 'home' ? 'active' : ''}">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link ${activeNav === 'about' ? 'active' : ''}">About SSV</a></li>
+        <li><a href="services.html" class="mobile-nav-link ${activeNav === 'services' ? 'active' : ''}">All Services</a></li>
+        <li><a href="security.html" class="mobile-nav-link ${activeNav === 'security' ? 'active' : ''}">Security Services</a></li>
+        <li><a href="housekeeping.html" class="mobile-nav-link ${activeNav === 'housekeeping' ? 'active' : ''}">Housekeeping Services</a></li>
+        <li><a href="infrastructure.html" class="mobile-nav-link ${activeNav === 'infra' ? 'active' : ''}">Infra & Civil Services</a></li>
+        <li><a href="industries.html" class="mobile-nav-link ${activeNav === 'industries' ? 'active' : ''}">Industries Served</a></li>
+        <li><a href="why-ssv.html" class="mobile-nav-link ${activeNav === 'why-ssv' ? 'active' : ''}">Why Choose SSV</a></li>
+        <li><a href="contact.html" class="mobile-nav-link ${activeNav === 'contact' ? 'active' : ''}">Contact Us</a></li>
       </ul>
       <div class="mobile-nav-cta">
         <button type="button" class="btn btn-primary btn-block" data-open-modal="enquiry">
@@ -92,110 +102,7 @@
 
   <!-- Page Main Content -->
   <main>
-    
-  <section class="hero-section" style="background-image: linear-gradient(to right, rgba(0, 20, 35, 0.95), rgba(0, 20, 35, 0.85)), url('assets/images/hero.jpg'); background-size: cover;">
-    <div class="container hero-content">
-      <span class="eyebrow" style="color: #F87171; background: rgba(192, 18, 42, 0.2); border: 1px solid #C0122A; padding: 0.3rem 0.75rem; border-radius: 2px;">
-        TOTAL INTEGRATED SOLUTIONS
-      </span>
-      <h1 class="hero-title" style="color: #FFF;">OUR COMPLETE SERVICE PORTFOLIO</h1>
-      <p class="hero-desc">
-        Comprehensive physical security, hospital-grade housekeeping, and turnkey civil infrastructure execution under a unified management umbrella.
-      </p>
-    </div>
-  </section>
-
-  <section class="section-py bg-light">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">COMPREHENSIVE CAPABILITIES</span>
-        <h2>THREE SPECIALIZED DIVISIONS, ONE UNIFIED STANDARD</h2>
-        <p>Explore our full range of solutions designed to protect assets, ensure spotless sanitation, and construct durable civil connectivity.</p>
-      </div>
-
-      <!-- Division 1: Security -->
-      <div style="background: #FFF; border: 1px solid #E2E8F0; padding: 2.5rem; margin-bottom: 3rem; border-top: 4px solid #C0122A;">
-        <div class="grid-2" style="align-items: center; gap: 2.5rem;">
-          <div>
-            <span class="eyebrow">DIVISION 01</span>
-            <h2 style="font-size: 2rem;">SECURITY &amp; SURVEILLANCE SERVICES</h2>
-            <p style="font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-              Vigilant on-ground guarding, specialized corporate concierge security, active CCTV video surveillance, access control, and emergency fire evacuation teams.
-            </p>
-            <ul class="feature-list" style="margin-bottom: 1.5rem;">
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>24/7 Manned Guarding &amp; Patrol Units</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Corporate Reception &amp; Turnstile Management</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Command Center Electronic Video Surveillance</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Fire Safety Drills &amp; Rapid Response Drills</span></li>
-            </ul>
-            <a href="security.html" class="btn btn-primary">VIEW ALL SECURITY MODULES &rarr;</a>
-          </div>
-          <div>
-            <img src="assets/images/security.jpg" alt="Security Guarding" style="width: 100%; border: 1px solid #CBD5E1;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Division 2: Housekeeping -->
-      <div style="background: #FFF; border: 1px solid #E2E8F0; padding: 2.5rem; margin-bottom: 3rem; border-top: 4px solid #001423;">
-        <div class="grid-2" style="align-items: center; gap: 2.5rem;">
-          <div>
-            <span class="eyebrow" style="color: #001423;">DIVISION 02</span>
-            <h2 style="font-size: 2rem;">HOUSEKEEPING &amp; HYGIENE SERVICES</h2>
-            <p style="font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-              Hospital-grade deep disinfection, mechanized corporate scrubbing, heavy industrial plant maintenance, residential estate upkeep, and safe waste management.
-            </p>
-            <ul class="feature-list" style="margin-bottom: 1.5rem;">
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#001423" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Mechanized Floor Scrubbing, Buffing &amp; Polishing</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#001423" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Industrial Factory Floor Degreasing</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#001423" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Eco-Friendly Disinfection &amp; Restroom Sanitation</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#001423" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Integrated Solid Waste Segregation &amp; Disposal</span></li>
-            </ul>
-            <a href="housekeeping.html" class="btn btn-secondary">VIEW ALL HOUSEKEEPING MODULES &rarr;</a>
-          </div>
-          <div>
-            <img src="assets/images/housekeeping.jpg" alt="Housekeeping Services" style="width: 100%; border: 1px solid #CBD5E1;">
-          </div>
-        </div>
-      </div>
-
-      <!-- Division 3: Infrastructure -->
-      <div style="background: #FFF; border: 1px solid #E2E8F0; padding: 2.5rem; border-top: 4px solid #C0122A;">
-        <div class="grid-2" style="align-items: center; gap: 2.5rem;">
-          <div>
-            <span class="eyebrow">DIVISION 03</span>
-            <h2 style="font-size: 2rem;">INFRASTRUCTURE &amp; CIVIL PROJECTS</h2>
-            <p style="font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-              Turnkey civil execution, municipal cable &amp; water pipeline utility shifting, heavy-duty asphalt and concrete road paving, and industrial site developments.
-            </p>
-            <ul class="feature-list" style="margin-bottom: 1.5rem;">
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Turnkey Civil Contracting &amp; Structural Works</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Underground Utility Trenching &amp; Cable Shifting</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Bituminous &amp; Concrete Road Paving &amp; Curbs</span></li>
-              <li class="feature-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Specialized Industrial Perimeter Walls &amp; Grading</span></li>
-            </ul>
-            <a href="infrastructure.html" class="btn btn-primary">VIEW ALL INFRASTRUCTURE MODULES &rarr;</a>
-          </div>
-          <div>
-            <img src="assets/images/engineering.jpg" alt="Civil Infrastructure" style="width: 100%; border: 1px solid #CBD5E1;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Inquiries -->
-  <section class="section-py bg-white">
-    <div class="container text-center" style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <span class="eyebrow">CUSTOMIZED PACKAGING</span>
-      <h2>NEED A TAILORED SERVICE PROPOSAL?</h2>
-      <p style="margin-bottom: 2rem;">
-        Whether you require a dedicated 50-guard security deployment, complete mechanized housekeeping for a corporate tower, or turnkey road paving, we prepare detailed milestone-driven proposals.
-      </p>
-      <button type="button" class="btn btn-primary btn-lg" data-open-modal="enquiry">REQUEST DETAILED ESTIMATE</button>
-    </div>
-  </section>
-
+    ${pageContent}
   </main>
 
   <!-- Global Footer -->
@@ -358,4 +265,7 @@
   <!-- Local Script -->
   <script src="assets/js/main.js"></script>
 </body>
-</html>
+</html>`;
+}
+
+module.exports = { renderPage };

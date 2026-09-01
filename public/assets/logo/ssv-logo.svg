@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" fill="none">
+  <!-- Shield Icon -->
+  <g transform="translate(10, 6)">
+    <path d="M28 2L5 12V28C5 44 15 52 28 58C41 52 51 44 51 28V12L28 2Z" fill="#C0122A" stroke="#990E21" stroke-width="2"/>
+    <path d="M28 8L11 16V28C11 40 18 47 28 52C38 47 45 40 45 28V16L28 8Z" fill="#FFFFFF" fill-opacity="0.15"/>
+    <!-- Security Star / Emblem -->
+    <path d="M28 17L31.5 24.5L39.5 25.5L33.5 31L35 39L28 35L21 39L22.5 31L16.5 25.5L24.5 24.5L28 17Z" fill="#FFFFFF"/>
+  </g>
+  <!-- Text Brand -->
+  <text x="75" y="38" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#001423" letter-spacing="1">SSV</text>
+  <text x="160" y="27" font-family="'Montserrat', 'Inter', sans-serif" font-size="10" font-weight="800" fill="#C0122A" letter-spacing="2">COMMERCIAL SERVICES</text>
+  <text x="160" y="42" font-family="'Montserrat', 'Inter', sans-serif" font-size="10" font-weight="800" fill="#848A99" letter-spacing="2">&amp; INFRA PVT LTD</text>
+  <text x="76" y="56" font-family="'Montserrat', 'Inter', sans-serif" font-size="8" font-weight="700" fill="#848A99" letter-spacing="1.5">SECURITY • HOUSEKEEPING • INFRASTRUCTURE</text>
+</svg>
