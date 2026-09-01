@@ -1,7 +1,7 @@
 /**
  * SSV Commercial Services & Infra Private Limited
  * Vanilla JavaScript Engine for Static Multi-Page Website
- * 100% Self-Contained, zero external runtime dependencies, works on file://
+ * 100% Self-Contained, zero external runtime dependencies, works on file://, GitHub Pages, and HTTP/HTTPS
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,60 +16,98 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initMobileMenu() {
   const toggleBtn = document.getElementById('mobile-menu-btn');
-  const navPanel = document.getElementById('mobile-nav-panel');
+  const navDrawer = document.getElementById('mobile-menu') || document.getElementById('mobile-nav-panel');
 
-  if (!toggleBtn || !navPanel) return;
+  if (!toggleBtn || !navDrawer) return;
+
+  const iconOpen = toggleBtn.querySelector('.icon-open');
+  const iconClose = toggleBtn.querySelector('.icon-close');
+
+  function openMenu() {
+    navDrawer.classList.remove('hidden');
+    navDrawer.classList.add('open');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    if (iconOpen && iconClose) {
+      iconOpen.style.display = 'none';
+      iconClose.style.display = 'inline-block';
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    navDrawer.classList.add('hidden');
+    navDrawer.classList.remove('open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    if (iconOpen && iconClose) {
+      iconOpen.style.display = 'inline-block';
+      iconClose.style.display = 'none';
+    }
+    document.body.style.overflow = '';
+  }
 
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = navPanel.classList.contains('open');
+    const isOpen = navDrawer.classList.contains('open') || !navDrawer.classList.contains('hidden');
     if (isOpen) {
-      navPanel.classList.remove('open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
+      closeMenu();
     } else {
-      navPanel.classList.add('open');
-      toggleBtn.setAttribute('aria-expanded', 'true');
+      openMenu();
     }
   });
 
-  // Close mobile nav when clicking outside
+  // Close when clicking any link inside drawer
+  const drawerLinks = navDrawer.querySelectorAll('a');
+  drawerLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close on outside click
   document.addEventListener('click', (e) => {
-    if (navPanel.classList.contains('open') && !navPanel.contains(e.target) && !toggleBtn.contains(e.target)) {
-      navPanel.classList.remove('open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
+    if (!navDrawer.classList.contains('hidden') && !navDrawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMenu();
     }
   });
 }
 
 /**
- * 2. Services Dropdown (Desktop Hover & Click)
+ * 2. Services Dropdown Menu (Desktop Hover & Click Support)
  */
 function initServicesDropdown() {
-  const dropdownContainers = document.querySelectorAll('.nav-dropdown');
+  const dropdownWrappers = document.querySelectorAll('.nav-dropdown-wrapper, .nav-dropdown, #services-dropdown-container');
 
-  dropdownContainers.forEach((container) => {
-    const toggle = container.querySelector('.dropdown-toggle');
-    if (!toggle) return;
+  dropdownWrappers.forEach((wrapper) => {
+    const trigger = wrapper.querySelector('.dropdown-trigger, .dropdown-toggle, a');
+    if (!trigger) return;
 
-    toggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isActive = container.classList.contains('active-open');
-      
-      // Close other dropdowns
-      dropdownContainers.forEach(c => c.classList.remove('active-open'));
-
-      if (!isActive) {
-        container.classList.add('active-open');
+    // Support click on touch devices
+    trigger.addEventListener('click', (e) => {
+      if (window.innerWidth <= 1024) return; // on mobile, navigation is handled in drawer
+      const menu = wrapper.querySelector('.dropdown-menu, .services-dropdown-panel');
+      if (menu) {
+        // Toggle on click
+        const isOpen = wrapper.classList.contains('active-open');
+        dropdownWrappers.forEach(w => w.classList.remove('active-open'));
+        if (!isOpen) {
+          wrapper.classList.add('active-open');
+        }
       }
     });
   });
 
   // Close on outside click
   document.addEventListener('click', (e) => {
-    dropdownContainers.forEach((container) => {
-      if (!container.contains(e.target)) {
-        container.classList.remove('active-open');
+    dropdownWrappers.forEach((wrapper) => {
+      if (!wrapper.contains(e.target)) {
+        wrapper.classList.remove('active-open');
       }
     });
   });
@@ -77,9 +115,7 @@ function initServicesDropdown() {
   // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      dropdownContainers.forEach(c => c.classList.remove('active-open'));
-      const mobileNav = document.getElementById('mobile-nav-panel');
-      if (mobileNav) mobileNav.classList.remove('open');
+      dropdownWrappers.forEach(w => w.classList.remove('active-open'));
     }
   });
 }
@@ -94,7 +130,7 @@ function initIndustryFilters() {
   if (!filterBar || !cardsGrid) return;
 
   const buttons = filterBar.querySelectorAll('.tab-btn');
-  const cards = cardsGrid.querySelectorAll('.industry-card');
+  const cards = cardsGrid.querySelectorAll('.industry-card, .industry-detail-card');
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -108,8 +144,10 @@ function initIndustryFilters() {
         const cardCat = card.getAttribute('data-category');
         if (filterValue === 'all' || cardCat === filterValue) {
           card.classList.remove('hidden');
+          card.style.display = '';
         } else {
           card.classList.add('hidden');
+          card.style.display = 'none';
         }
       });
     });
@@ -120,14 +158,17 @@ function initIndustryFilters() {
  * 4. Header Scroll State
  */
 function initHeaderScroll() {
-  const header = document.querySelector('.site-header');
+  const header = document.getElementById('main-header') || document.querySelector('.site-header');
   if (!header) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+  const handleScroll = () => {
+    if (window.scrollY > 30) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-  }, { passive: true });
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 }
