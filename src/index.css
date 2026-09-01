@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ssv-red: #C0122A;
+    --ssv-red-hover: #9E0E22;
+    --ssv-red-light: #FDE8EA;
+    --ssv-navy: #001423;
+    --ssv-navy-deep: #000B14;
+    --ssv-navy-surface: #031B2D;
+    --ssv-navy-card: #06243C;
+    --ssv-navy-border: #0F3759;
+    --ssv-gray: #848A99;
+    --ssv-gray-light: #B4B9C6;
+    --ssv-gray-muted: #E2E5EC;
+    --ssv-bg-light: #F6F8FA;
+    --ssv-bg-alt: #EDF1F5;
+  }
+
+  body {
+    font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #001423;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Typography & Architectural Grid Utility */
+.font-gotham {
+  font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.tracking-editorial {
+  letter-spacing: -0.035em;
+}
+
+.tracking-label {
+  letter-spacing: 0.15em;
+}
+
+/* SSV Official Colors */
+.bg-ssv-red { background-color: #C0122A; }
+.text-ssv-red { color: #C0122A; }
+.border-ssv-red { border-color: #C0122A; }
+
+.bg-ssv-navy { background-color: #001423; }
+.text-ssv-navy { color: #001423; }
+.border-ssv-navy { border-color: #001423; }
+
+.bg-ssv-navy-surface { background-color: #031B2D; }
+.bg-ssv-navy-card { background-color: #06243C; }
+.border-ssv-navy-border { border-color: #0F3759; }
+
+.bg-ssv-gray { background-color: #848A99; }
+.text-ssv-gray { color: #848A99; }
+.border-ssv-gray { border-color: #848A99; }
+
+.bg-ssv-light { background-color: #F6F8FA; }
+.bg-ssv-alt { background-color: #EDF1F5; }
+
+/* Custom Animations and Transitions */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.03); }
+}
+
+@keyframes scanLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-scan {
+  animation: scanLine 6s linear infinite;
+}
+
+.tech-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(132, 138, 153, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(132, 138, 153, 0.08) 1px, transparent 1px);
+}
+
+.tech-grid-pattern-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 55, 89, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 55, 89, 0.4) 1px, transparent 1px);
+}
+
+/* Image Zoom & Reveal effects */
+.img-editorial {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.group:hover .img-editorial {
+  transform: scale(1.04);
+}

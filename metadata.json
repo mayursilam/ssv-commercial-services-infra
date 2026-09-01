@@ -1,0 +1,6 @@
+{
+  "name": "SSV Commercial Services & Infra",
+  "description": "Official corporate website for SSV Commercial Services & Infra Private Limited - Premier Security, Housekeeping, and Infrastructure Solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
