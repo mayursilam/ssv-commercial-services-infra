@@ -5,10 +5,11 @@ import { VALUE_PILLARS, QUALITATIVE_STRENGTHS, PROCESS_STAGES, COMPANY_INFO } fr
 import { IMAGES } from '../data/images';
 
 interface WhySSVPageProps {
-  onOpenEnquiry: () => void;
+  onNavigate?: (page: string) => void;
+  onOpenEnquiry?: () => void;
 }
 
-export const WhySSVPage: React.FC<WhySSVPageProps> = ({ onOpenEnquiry }) => {
+export const WhySSVPage: React.FC<WhySSVPageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-[#001423]">
       {/* Banner */}
@@ -135,7 +136,10 @@ export const WhySSVPage: React.FC<WhySSVPageProps> = ({ onOpenEnquiry }) => {
 
           <div className="mt-12 text-center">
             <button
-              onClick={onOpenEnquiry}
+              id="why-schedule-evaluation-btn"
+              onClick={() => {
+                if (onNavigate) onNavigate('contact');
+              }}
               className="px-8 py-4 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-bold uppercase tracking-widest rounded-sm inline-flex items-center gap-2 shadow-md transition-all"
             >
               <span>SCHEDULE A SITE EVALUATION</span>

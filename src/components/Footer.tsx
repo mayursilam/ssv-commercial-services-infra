@@ -31,7 +31,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               onClick={(e) => handleNav(e, 'home', 'index.html')}
               className="inline-block"
             >
-              <Logo variant="horizontal" theme="light" height={44} />
+              <Logo
+                variant="horizontal"
+                className="w-[220px] sm:w-[250px]"
+              />
             </a>
             
             <p className="text-sm text-slate-400 leading-relaxed pr-4">
@@ -240,10 +243,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="pt-2">
                 <a
                   href="contact.html"
+                  id="footer-contact-cta"
                   onClick={(e) => handleNav(e, 'contact', 'contact.html')}
                   className="w-full py-2.5 px-3 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-center font-bold text-xs uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2"
                 >
-                  <span>Submit RFP / Enquiry</span>
+                  <span>GET IN TOUCH</span>
                   <ArrowRightIcon size={14} />
                 </a>
               </div>

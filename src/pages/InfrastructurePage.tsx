@@ -8,10 +8,11 @@ import { INFRASTRUCTURE_MODULES, COMPANY_INFO } from '../data/content';
 import { IMAGES } from '../data/images';
 
 interface InfrastructurePageProps {
-  onOpenEnquiry: (service?: string) => void;
+  onNavigate?: (page: string) => void;
+  onOpenEnquiry?: (service?: string) => void;
 }
 
-export const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onOpenEnquiry }) => {
+export const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-[#001423]">
       {/* Infrastructure Banner - Dark Editorial Engineering */}
@@ -42,7 +43,10 @@ export const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onOpenEn
             </p>
             <div className="pt-2">
               <button
-                onClick={() => onOpenEnquiry('Infra Services')}
+                id="infra-hero-consult-btn"
+                onClick={() => {
+                  if (onNavigate) onNavigate('contact');
+                }}
                 className="px-8 py-4 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-black tracking-widest uppercase rounded-sm inline-flex items-center gap-2 transition-all shadow-xl"
               >
                 <span>CONSULT WITH INFRA ENGINEERS</span>
@@ -111,10 +115,12 @@ export const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onOpenEn
 
                     <div className="pt-3">
                       <button
-                        onClick={() => onOpenEnquiry(module.title)}
+                        onClick={() => {
+                          if (onNavigate) onNavigate('contact');
+                        }}
                         className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#C0122A] uppercase hover:underline"
                       >
-                        <span>Submit RFP for {module.title}</span>
+                        <span>Contact for {module.title}</span>
                         <ArrowRightIcon size={12} />
                       </button>
                     </div>

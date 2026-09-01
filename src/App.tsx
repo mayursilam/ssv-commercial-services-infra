@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MobileActionBar } from './components/MobileActionBar';
-import { EnquiryModal } from './components/EnquiryModal';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -16,8 +15,6 @@ import { ContactPage } from './pages/ContactPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
-  const [isEnquiryOpen, setIsEnquiryOpen] = useState<boolean>(false);
-  const [enquiryDefaultService, setEnquiryDefaultService] = useState<string>('Security Services');
 
   // Handle URL Hash or Path Routing
   useEffect(() => {
@@ -72,32 +69,27 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenEnquiry = (service?: string) => {
-    if (service) setEnquiryDefaultService(service);
-    setIsEnquiryOpen(true);
-  };
-
   const renderPage = () => {
     switch (currentPage) {
       case 'about':
-        return <AboutPage onNavigate={navigateTo} onOpenEnquiry={() => handleOpenEnquiry('Corporate Services')} />;
+        return <AboutPage onNavigate={navigateTo} />;
       case 'services':
-        return <ServicesPage onNavigate={navigateTo} onOpenEnquiry={handleOpenEnquiry} />;
+        return <ServicesPage onNavigate={navigateTo} />;
       case 'security':
-        return <SecurityPage onOpenEnquiry={handleOpenEnquiry} />;
+        return <SecurityPage onNavigate={navigateTo} />;
       case 'housekeeping':
-        return <HousekeepingPage onOpenEnquiry={handleOpenEnquiry} />;
+        return <HousekeepingPage onNavigate={navigateTo} />;
       case 'infrastructure':
-        return <InfrastructurePage onOpenEnquiry={handleOpenEnquiry} />;
+        return <InfrastructurePage onNavigate={navigateTo} />;
       case 'industries':
-        return <IndustriesPage onOpenEnquiry={handleOpenEnquiry} />;
+        return <IndustriesPage onNavigate={navigateTo} />;
       case 'why-ssv':
-        return <WhySSVPage onOpenEnquiry={() => handleOpenEnquiry('Consultation & Audit')} />;
+        return <WhySSVPage onNavigate={navigateTo} />;
       case 'contact':
         return <ContactPage />;
       case 'home':
       default:
-        return <HomePage onNavigate={navigateTo} onOpenEnquiry={handleOpenEnquiry} />;
+        return <HomePage onNavigate={navigateTo} />;
     }
   };
 
@@ -106,7 +98,6 @@ export default function App() {
       <Header
         currentPage={currentPage}
         onNavigate={navigateTo}
-        onOpenEnquiry={() => handleOpenEnquiry()}
       />
 
       <main className="flex-grow">
@@ -115,13 +106,7 @@ export default function App() {
 
       <Footer onNavigate={navigateTo} />
 
-      <MobileActionBar onOpenEnquiry={() => handleOpenEnquiry()} />
-
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-        defaultService={enquiryDefaultService}
-      />
+      <MobileActionBar onNavigate={navigateTo} />
     </div>
   );
 }

@@ -6,10 +6,10 @@ import { IMAGES } from '../data/images';
 
 interface AboutPageProps {
   onNavigate: (page: string) => void;
-  onOpenEnquiry: () => void;
+  onOpenEnquiry?: () => void;
 }
 
-export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry }) => {
+export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-[#001423]">
       {/* Header Banner */}
@@ -67,7 +67,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
               <div className="pt-2">
                 <button
-                  onClick={onOpenEnquiry}
+                  id="about-connect-management-btn"
+                  onClick={() => onNavigate('contact')}
                   className="px-6 py-3.5 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-bold tracking-widest uppercase rounded-sm flex items-center gap-2 transition-colors shadow-md"
                 >
                   <span>CONNECT WITH MANAGEMENT</span>

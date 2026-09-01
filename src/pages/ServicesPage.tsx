@@ -12,10 +12,10 @@ import { IMAGES } from '../data/images';
 
 interface ServicesPageProps {
   onNavigate: (page: string) => void;
-  onOpenEnquiry: (service?: string) => void;
+  onOpenEnquiry?: (service?: string) => void;
 }
 
-export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, onOpenEnquiry }) => {
+export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-[#001423]">
       {/* Services Banner */}
@@ -208,10 +208,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, onOpenEn
           </p>
           <div className="pt-2">
             <button
-              onClick={() => onOpenEnquiry('Integrated Facility Solution')}
+              id="services-facility-contact-btn"
+              onClick={() => onNavigate('contact')}
               className="px-8 py-3.5 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-black tracking-widest uppercase rounded-sm inline-flex items-center gap-2 transition-all shadow-md"
             >
-              <span>REQUEST CUSTOM FACILITY PROPOSAL</span>
+              <span>CONNECT WITH OPERATIONS</span>
               <ArrowRightIcon size={14} />
             </button>
           </div>

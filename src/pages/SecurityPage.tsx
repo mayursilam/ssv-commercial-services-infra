@@ -8,10 +8,11 @@ import { SECURITY_SERVICES_LIST, COMPANY_INFO } from '../data/content';
 import { IMAGES } from '../data/images';
 
 interface SecurityPageProps {
-  onOpenEnquiry: (service?: string) => void;
+  onNavigate?: (page: string) => void;
+  onOpenEnquiry?: (service?: string) => void;
 }
 
-export const SecurityPage: React.FC<SecurityPageProps> = ({ onOpenEnquiry }) => {
+export const SecurityPage: React.FC<SecurityPageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-[#001423]">
       {/* Banner */}
@@ -41,7 +42,10 @@ export const SecurityPage: React.FC<SecurityPageProps> = ({ onOpenEnquiry }) => 
             </p>
             <div className="pt-2">
               <button
-                onClick={() => onOpenEnquiry('Security Services')}
+                id="security-hero-deploy-btn"
+                onClick={() => {
+                  if (onNavigate) onNavigate('contact');
+                }}
                 className="px-8 py-4 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-black tracking-widest uppercase rounded-sm inline-flex items-center gap-2 transition-all shadow-xl"
               >
                 <span>DEPLOY SECURITY PERSONNEL</span>
@@ -110,10 +114,12 @@ export const SecurityPage: React.FC<SecurityPageProps> = ({ onOpenEnquiry }) => 
 
                     <div className="pt-3">
                       <button
-                        onClick={() => onOpenEnquiry(service.title)}
+                        onClick={() => {
+                          if (onNavigate) onNavigate('contact');
+                        }}
                         className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#C0122A] uppercase hover:underline"
                       >
-                        <span>Enquire for {service.title}</span>
+                        <span>Contact for {service.title}</span>
                         <ArrowRightIcon size={12} />
                       </button>
                     </div>

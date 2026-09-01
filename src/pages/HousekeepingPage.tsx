@@ -8,10 +8,11 @@ import { HOUSEKEEPING_SERVICES_LIST, COMPANY_INFO } from '../data/content';
 import { IMAGES } from '../data/images';
 
 interface HousekeepingPageProps {
-  onOpenEnquiry: (service?: string) => void;
+  onNavigate?: (page: string) => void;
+  onOpenEnquiry?: (service?: string) => void;
 }
 
-export const HousekeepingPage: React.FC<HousekeepingPageProps> = ({ onOpenEnquiry }) => {
+export const HousekeepingPage: React.FC<HousekeepingPageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-[#001423]">
       {/* Housekeeping Banner */}
@@ -41,7 +42,10 @@ export const HousekeepingPage: React.FC<HousekeepingPageProps> = ({ onOpenEnquir
             </p>
             <div className="pt-2">
               <button
-                onClick={() => onOpenEnquiry('Housekeeping Services')}
+                id="housekeeping-hero-proposal-btn"
+                onClick={() => {
+                  if (onNavigate) onNavigate('contact');
+                }}
                 className="px-8 py-4 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-black tracking-widest uppercase rounded-sm inline-flex items-center gap-2 transition-all shadow-xl"
               >
                 <span>REQUEST HOUSEKEEPING PROPOSAL</span>
@@ -110,10 +114,12 @@ export const HousekeepingPage: React.FC<HousekeepingPageProps> = ({ onOpenEnquir
 
                     <div className="pt-3">
                       <button
-                        onClick={() => onOpenEnquiry(service.title)}
+                        onClick={() => {
+                          if (onNavigate) onNavigate('contact');
+                        }}
                         className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#001423] hover:text-[#C0122A] uppercase hover:underline"
                       >
-                        <span>Enquire for {service.title}</span>
+                        <span>Contact for {service.title}</span>
                         <ArrowRightIcon size={12} />
                       </button>
                     </div>

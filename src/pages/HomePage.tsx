@@ -16,25 +16,11 @@ import { IMAGES } from '../data/images';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
-  onOpenEnquiry: (service?: string) => void;
+  onOpenEnquiry?: (service?: string) => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnquiry }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const [selectedIndustryTab, setSelectedIndustryTab] = useState<string>('all');
-  const [contactSubmitted, setContactSubmitted] = useState(false);
-  const [contactForm, setContactForm] = useState({
-    name: '',
-    company: '',
-    phone: '',
-    email: '',
-    service: 'Security Services',
-    message: ''
-  });
-
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setContactSubmitted(true);
-  };
 
   const filteredIndustries = selectedIndustryTab === 'all'
     ? INDUSTRIES_LIST
@@ -91,7 +77,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnquiry })
               </button>
 
               <button
-                onClick={() => onOpenEnquiry()}
+                id="hero-contact-btn"
+                onClick={() => onNavigate('contact')}
                 className="px-8 py-4 bg-[#031B2D]/80 hover:bg-[#06243C] text-white text-xs sm:text-sm font-bold tracking-widest uppercase border border-[#0F3759] hover:border-slate-400 transition-all rounded-sm flex items-center justify-center gap-2 backdrop-blur-md"
               >
                 <span>GET IN TOUCH</span>
@@ -756,222 +743,149 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnquiry })
       </section>
 
       {/* ========================================================
-          SECTION 11 - CONTACT & HIGH-CONVERSION ENQUIRY
+          SECTION 11 - DIRECT CONTACT SHOWCASE
           ======================================================== */}
       <section className="py-20 lg:py-28 bg-[#000E1A] text-white border-t-2 border-[#C0122A]" id="contact-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Left Contact Info */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 bg-[#C0122A]" />
-                <span className="text-xs font-black tracking-[0.2em] text-[#848A99] uppercase">
-                  GET IN TOUCH
-                </span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+          
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C0122A]/20 border border-[#C0122A]/40 text-white text-xs font-bold tracking-widest uppercase rounded-sm">
+              DIRECT OPERATIONS CONTACT
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white font-gotham uppercase">
+              LET'S BUILD A SAFER,<br />
+              <span className="text-[#C0122A]">CLEANER, BETTER</span> ENVIRONMENT.
+            </h2>
+
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+              Connect directly with our operational leadership in Dharashiv, Maharashtra for rapid security deployment, mechanized housekeeping, and infrastructure project consultation.
+            </p>
+          </div>
+
+          {/* 3 Core Primary Contact Action Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1: CALL US */}
+            <div 
+              id="home-contact-card-call"
+              className="bg-[#031B2D] border-2 border-[#0F3759] hover:border-[#C0122A] p-8 rounded-sm transition-all duration-300 flex flex-col justify-between group shadow-xl"
+            >
+              <div className="space-y-4">
+                <div className="w-14 h-14 rounded-full bg-[#C0122A]/20 text-[#C0122A] flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <PhoneIcon size={24} color="#C0122A" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold tracking-widest text-[#848A99] uppercase block">DIRECT HOTLINE</span>
+                  <h3 className="text-xl font-black text-white font-gotham uppercase mt-1">CALL US</h3>
+                  <p className="text-lg font-bold text-[#C0122A] mt-2">+91 86690 05122</p>
+                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                    24/7 dedicated line for operational coordination, emergency security escalation, and immediate site requirements.
+                  </p>
+                </div>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white font-gotham uppercase">
-                LET'S BUILD A SAFER,<br />
-                <span className="text-[#C0122A]">CLEANER, BETTER</span> ENVIRONMENT.
-              </h2>
-
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Connect directly with our operational leadership at Dharashiv. We are ready to conduct on-site evaluations, structured RFPs, and tailored service deployments.
-              </p>
-
-              <div className="space-y-4 pt-2">
+              <div className="pt-6 mt-6 border-t border-[#0F3759]">
                 <a
                   href={`tel:${COMPANY_INFO.phoneRaw}`}
-                  className="p-4 bg-[#031B2D] border border-[#0F3759] rounded-sm flex items-center gap-4 hover:border-[#C0122A] transition-colors group"
+                  id="home-btn-call-now"
+                  className="w-full py-3.5 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-center font-bold text-xs uppercase tracking-widest rounded-sm transition-all flex items-center justify-center gap-2 shadow-md shadow-red-950/40"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#C0122A]/20 flex items-center justify-center text-[#C0122A]">
-                    <PhoneIcon size={18} color="#C0122A" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Direct Operational Helpline</div>
-                    <div className="text-base font-bold text-white group-hover:text-[#C0122A] transition-colors">{COMPANY_INFO.phone}</div>
-                  </div>
+                  <PhoneIcon size={14} color="#FFFFFF" />
+                  <span>CALL NOW</span>
                 </a>
+              </div>
+            </div>
 
+            {/* Card 2: WHATSAPP US */}
+            <div 
+              id="home-contact-card-whatsapp"
+              className="bg-[#031B2D] border-2 border-[#0F3759] hover:border-[#25D366] p-8 rounded-sm transition-all duration-300 flex flex-col justify-between group shadow-xl"
+            >
+              <div className="space-y-4">
+                <div className="w-14 h-14 rounded-full bg-[#25D366]/20 text-[#25D366] flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <WhatsappIcon size={24} color="#25D366" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold tracking-widest text-[#848A99] uppercase block">INSTANT CHAT</span>
+                  <h3 className="text-xl font-black text-white font-gotham uppercase mt-1">WHATSAPP US</h3>
+                  <p className="text-lg font-bold text-[#25D366] mt-2">+91 86690 05122</p>
+                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                    Fastest communication for sharing site photos, GPS coordinates, property layouts, and quick operational updates.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-[#0F3759]">
                 <a
                   href={COMPANY_INFO.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-[#031B2D] border border-[#0F3759] rounded-sm flex items-center gap-4 hover:border-[#25D366] transition-colors group"
+                  id="home-btn-whatsapp-us"
+                  className="w-full py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-black font-black text-xs uppercase tracking-widest rounded-sm transition-all flex items-center justify-center gap-2 shadow-md"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366]">
-                    <WhatsappIcon size={18} color="#25D366" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Instant WhatsApp Chat</div>
-                    <div className="text-base font-bold text-white group-hover:text-[#25D366] transition-colors">+91 86690 05122</div>
-                  </div>
+                  <WhatsappIcon size={16} color="#000000" />
+                  <span>WHATSAPP US</span>
                 </a>
-
-                <a
-                  href={`mailto:${COMPANY_INFO.email}`}
-                  className="p-4 bg-[#031B2D] border border-[#0F3759] rounded-sm flex items-center gap-4 hover:border-slate-300 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white">
-                    <MailIcon size={18} color="#FFFFFF" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Official Email Inquiries</div>
-                    <div className="text-base font-bold text-white group-hover:text-slate-300 transition-colors">{COMPANY_INFO.email}</div>
-                  </div>
-                </a>
-
-                <div className="p-4 bg-[#031B2D] border border-[#0F3759] rounded-sm flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#C0122A]/20 flex items-center justify-center text-[#C0122A] flex-shrink-0 mt-0.5">
-                    <MapPinIcon size={18} color="#C0122A" />
-                  </div>
-                  <div className="text-xs text-slate-300">
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Registered Office</div>
-                    <div className="font-semibold text-white mt-0.5">{COMPANY_INFO.address.line1}</div>
-                    <div>{COMPANY_INFO.address.line2}</div>
-                    <div>{COMPANY_INFO.address.state} - {COMPANY_INFO.address.pincode}</div>
-                  </div>
-                </div>
               </div>
             </div>
 
-            {/* Right Contact Form */}
-            <div className="lg:col-span-7 bg-[#001423] border border-[#0F3759] p-6 sm:p-8 rounded-sm shadow-2xl">
-              {!contactSubmitted ? (
-                <form onSubmit={handleContactSubmit} className="space-y-4">
-                  <div className="border-b border-[#0F3759] pb-3">
-                    <h3 className="text-xl font-bold font-gotham text-white uppercase">
-                      REQUEST A PROPOSAL / CONSULTATION
-                    </h3>
-                    <p className="text-xs text-slate-400 mt-1">
-                      Fill out the form below to receive a site assessment and customized commercial proposal.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={contactForm.name}
-                        onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                        placeholder="e.g. Anand Shinde"
-                        className="w-full bg-[#031B2D] border border-[#0F3759] rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C0122A]"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">
-                        Organization / Property *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={contactForm.company}
-                        onChange={(e) => setContactForm({ ...contactForm, company: e.target.value })}
-                        placeholder="e.g. Shinde Tech Solutions"
-                        className="w-full bg-[#031B2D] border border-[#0F3759] rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C0122A]"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={contactForm.phone}
-                        onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                        placeholder="+91 86690 05122"
-                        className="w-full bg-[#031B2D] border border-[#0F3759] rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C0122A]"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={contactForm.email}
-                        onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                        placeholder="anand@company.in"
-                        className="w-full bg-[#031B2D] border border-[#0F3759] rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C0122A]"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">
-                      Primary Service Requirement *
-                    </label>
-                    <select
-                      value={contactForm.service}
-                      onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
-                      className="w-full bg-[#031B2D] border border-[#0F3759] rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C0122A]"
-                    >
-                      <option value="Security Services">Security Services (Manned Guarding / CCTV / Patrol)</option>
-                      <option value="Housekeeping Services">Housekeeping Services (Commercial / Industrial Cleaning)</option>
-                      <option value="Infra Services">Infra Services (Turnkey / Civil / Road / Utility)</option>
-                      <option value="Turnkey Projects">Turnkey Civil Projects</option>
-                      <option value="Utility Shifting">Utility Shifting Works</option>
-                      <option value="Road Construction">Road Construction & Paving</option>
-                      <option value="Service Sector Solutions">Service Sector Solutions</option>
-                      <option value="Other">Other Requirement</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">
-                      Project Location / Scope Overview
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={contactForm.message}
-                      onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                      placeholder="Specify your property size, number of guard posts, civil scope, or timeline..."
-                      className="w-full bg-[#031B2D] border border-[#0F3759] rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#C0122A]"
-                    />
-                  </div>
-
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      className="w-full py-4 bg-[#C0122A] hover:bg-[#9E0E22] text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-950/50"
-                    >
-                      <span>SUBMIT INQUIRY TO SSV OPERATIONS</span>
-                      <ArrowRightIcon size={14} />
-                    </button>
-                  </div>
-                </form>
-              ) : (
-                <div className="py-8 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-[#C0122A]/20 border border-[#C0122A] flex items-center justify-center mx-auto text-[#C0122A]">
-                    <CheckIcon size={32} color="#C0122A" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white font-gotham">Enquiry Registered</h3>
-                  <p className="text-xs text-slate-300 max-w-md mx-auto">
-                    Thank you, {contactForm.name}. Your details have been transmitted to SSV Commercial Services & Infra Private Limited. Our Dharashiv headquarters will reach out to you shortly.
-                  </p>
-                  <div className="pt-2">
-                    <button
-                      onClick={() => setContactSubmitted(false)}
-                      className="px-6 py-2.5 bg-[#031B2D] text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white border border-[#0F3759] rounded-sm"
-                    >
-                      Submit Another Requirement
-                    </button>
-                  </div>
+            {/* Card 3: EMAIL US */}
+            <div 
+              id="home-contact-card-email"
+              className="bg-[#031B2D] border-2 border-[#0F3759] hover:border-slate-300 p-8 rounded-sm transition-all duration-300 flex flex-col justify-between group shadow-xl"
+            >
+              <div className="space-y-4">
+                <div className="w-14 h-14 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <MailIcon size={24} color="#FFFFFF" />
                 </div>
-              )}
+                <div>
+                  <span className="text-xs font-bold tracking-widest text-[#848A99] uppercase block">OFFICIAL EMAIL</span>
+                  <h3 className="text-xl font-black text-white font-gotham uppercase mt-1">EMAIL US</h3>
+                  <p className="text-base font-bold text-white mt-2 break-all">{COMPANY_INFO.email}</p>
+                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                    Formal correspondence, corporate vendor onboarding, contracts, and municipal infrastructure communications.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-[#0F3759]">
+                <a
+                  href={`mailto:${COMPANY_INFO.email}`}
+                  id="home-btn-send-email"
+                  className="w-full py-3.5 bg-[#001423] hover:bg-[#06243C] border border-[#0F3759] text-white text-center font-bold text-xs uppercase tracking-widest rounded-sm transition-all flex items-center justify-center gap-2 shadow-md"
+                >
+                  <MailIcon size={14} color="#FFFFFF" />
+                  <span>SEND EMAIL</span>
+                </a>
+              </div>
             </div>
           </div>
+
+          {/* Location & Headquarters Bar */}
+          <div className="p-6 sm:p-8 bg-[#001423] border border-[#0F3759] rounded-sm flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4 text-left">
+              <div className="w-12 h-12 rounded-full bg-[#C0122A]/20 flex items-center justify-center flex-shrink-0">
+                <MapPinIcon size={22} color="#C0122A" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#C0122A] uppercase tracking-wider">Registered Corporate Office</div>
+                <div className="text-sm font-bold text-white mt-0.5">{COMPANY_INFO.address.line1}, {COMPANY_INFO.address.line2}</div>
+                <div className="text-xs text-slate-400">{COMPANY_INFO.address.state} - {COMPANY_INFO.address.pincode}, {COMPANY_INFO.address.country} (Dharashiv, Maharashtra)</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => onNavigate('contact')}
+                className="px-6 py-3.5 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-bold uppercase tracking-widest rounded-sm transition-colors shadow-md flex items-center gap-2"
+              >
+                <span>VIEW FULL CONTACT HUB</span>
+                <ArrowRightIcon size={14} />
+              </button>
+            </div>
+          </div>
+
         </div>
       </section>
     </div>

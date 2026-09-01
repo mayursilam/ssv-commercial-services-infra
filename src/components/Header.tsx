@@ -6,13 +6,11 @@ import { COMPANY_INFO } from '../data/content';
 interface HeaderProps {
   currentPage?: string;
   onNavigate?: (page: string) => void;
-  onOpenEnquiry?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentPage = 'home',
-  onNavigate,
-  onOpenEnquiry
+  onNavigate
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -120,7 +118,10 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center group transition-transform duration-200 hover:scale-[1.01]"
             aria-label="SSV Home"
           >
-            <Logo variant="horizontal" theme="light" height={42} />
+            <Logo
+              variant="horizontal"
+              className="w-[185px] sm:w-[210px] lg:w-[250px]"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -200,9 +201,9 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Desktop Right CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <button
+              id="header-cta-contact-btn"
               onClick={() => {
-                if (onOpenEnquiry) onOpenEnquiry();
-                else if (onNavigate) onNavigate('contact');
+                if (onNavigate) onNavigate('contact');
               }}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-bold tracking-widest uppercase transition-all duration-200 shadow-md shadow-red-950/40 rounded-sm hover:translate-y-[-1px]"
             >
@@ -226,8 +227,8 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-[#001423]/98 backdrop-blur-xl pt-24 pb-8 px-6 flex flex-col justify-between overflow-y-auto">
           <div className="space-y-4">
-            <div className="pb-4 border-b border-white/10">
-              <Logo variant="stacked" theme="light" height={48} />
+            <div className="pb-4 border-b border-white/10 flex justify-center">
+              <Logo variant="stacked" className="w-[180px]" />
             </div>
 
             <div className="space-y-1 pt-2">
@@ -268,14 +269,14 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="pt-6 border-t border-white/10 space-y-3">
             <button
+              id="mobile-drawer-contact-btn"
               onClick={() => {
                 setMobileMenuOpen(false);
-                if (onOpenEnquiry) onOpenEnquiry();
-                else if (onNavigate) onNavigate('contact');
+                if (onNavigate) onNavigate('contact');
               }}
               className="w-full py-3.5 bg-[#C0122A] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 rounded-sm"
             >
-              <span>REQUEST A QUOTE</span>
+              <span>GET IN TOUCH</span>
               <ArrowRightIcon size={14} />
             </button>
 

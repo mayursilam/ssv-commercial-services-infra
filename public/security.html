@@ -3,409 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Security Services | Manned Guarding, CCTV & Access Control | SSV</title>
-  <meta name="description" content="Professional security guarding, corporate concierge security, CCTV surveillance, VIP protection, and emergency fire response by SSV Commercial Services & Infra Private Limited.">
-  <meta property="og:title" content="Security Services | Manned Guarding, CCTV & Access Control | SSV">
-  <meta property="og:description" content="Professional security guarding, corporate concierge security, CCTV surveillance, VIP protection, and emergency fire response by SSV Commercial Services & Infra Private Limited.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Security Services | SSV Commercial Services & Infra</title>
+  <meta name="description" content="SSV Security Services: Manned Guarding, Corporate Security, Event & Crowd Management, VIP Protection, CCTV Surveillance, Access Control, Fire Safety & Patrol.">
+  <link rel="icon" type="image/png" href="assets/images/logo/ssv-logo-stacked.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .header-nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .nav-list { display: flex; list-style: none; gap: 1.5rem; }
+    .nav-list a { font-size: 0.875rem; font-weight: 700; color: #CBD5E1; text-transform: uppercase; letter-spacing: 0.05em; }
+    .nav-list a:hover, .nav-list a.active { color: #FFFFFF; }
+    .section-py { padding: 5rem 0; }
+    .hero-banner { background: #001423; color: #FFFFFF; padding: 6rem 0; border-bottom: 2px solid #C0122A; }
+    .service-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid #E2E8F0; }
+    @media (max-width: 768px) { .service-row { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-links">
-        <a href="tel:+918669005122">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          +91 86690 05122
+  <header style="background: #001423; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+      <div class="header-nav">
+        <a href="index.html" style="display: inline-block; text-decoration: none;">
+          <img src="assets/images/logo/ssv-logo-horizontal.png" alt="SSV Commercial Services & Infra Private Limited" style="width: 220px; max-width: 100%; height: auto; display: block; object-fit: contain;">
         </a>
-        <a href="mailto:ssvsecservices@gmail.com" class="hidden-mobile">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-          ssvsecservices@gmail.com
-        </a>
-      </div>
-      <div style="font-size: 0.75rem; font-weight: 700; color: #848A99; letter-spacing: 0.05em; text-transform: uppercase;">
-        Dharashiv, Maharashtra • 24/7 Operational Command
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Site Header -->
-  <header class="site-header">
-    <div class="container header-main">
-      <!-- Brand Logo -->
-      <a href="index.html" class="brand-logo" id="brandLogoLink">
-        <img src="assets/logo/ssv-logo.svg" alt="SSV Commercial Services & Infra Logo" width="240" height="52">
-      </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Main Navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link ">Home</a></li>
-          <li><a href="about.html" class="nav-link ">About SSV</a></li>
-          <li><a href="services.html" class="nav-link ">Services</a></li>
-          <li><a href="security.html" class="nav-link active">Security</a></li>
-          <li><a href="housekeeping.html" class="nav-link ">Housekeeping</a></li>
-          <li><a href="infrastructure.html" class="nav-link ">Infra</a></li>
-          <li><a href="industries.html" class="nav-link ">Industries</a></li>
-          <li><a href="why-ssv.html" class="nav-link ">Why SSV</a></li>
-          <li><a href="contact.html" class="nav-link ">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Header CTA Button -->
-      <div class="header-cta">
-        <button type="button" class="btn btn-primary" data-open-modal="enquiry">
-          REQUEST QUOTE
-        </button>
-      </div>
-
-      <!-- Mobile Menu Hamburger Button -->
-      <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- Mobile Nav Panel -->
-    <div class="mobile-nav-panel" id="mobileNavPanel">
-      <ul class="mobile-nav-list">
-        <li><a href="index.html" class="mobile-nav-link ">Home</a></li>
-        <li><a href="about.html" class="mobile-nav-link ">About SSV</a></li>
-        <li><a href="services.html" class="mobile-nav-link ">All Services</a></li>
-        <li><a href="security.html" class="mobile-nav-link active">Security Services</a></li>
-        <li><a href="housekeeping.html" class="mobile-nav-link ">Housekeeping Services</a></li>
-        <li><a href="infrastructure.html" class="mobile-nav-link ">Infra & Civil Services</a></li>
-        <li><a href="industries.html" class="mobile-nav-link ">Industries Served</a></li>
-        <li><a href="why-ssv.html" class="mobile-nav-link ">Why Choose SSV</a></li>
-        <li><a href="contact.html" class="mobile-nav-link ">Contact Us</a></li>
-      </ul>
-      <div class="mobile-nav-cta">
-        <button type="button" class="btn btn-primary btn-block" data-open-modal="enquiry">
-          REQUEST A PROPOSAL
-        </button>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About SSV</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="security.html" class="active" style="color: #C0122A;">Security</a></li>
+            <li><a href="housekeeping.html">Housekeeping</a></li>
+            <li><a href="infrastructure.html">Infra</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="why-ssv.html">Why SSV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary">ENQUIRE NOW</a>
       </div>
     </div>
   </header>
 
-  <!-- Page Main Content -->
-  <main>
-    
-  <section class="hero-section" style="background-image: linear-gradient(to right, rgba(0, 20, 35, 0.95), rgba(0, 20, 35, 0.85)), url('assets/images/security.jpg'); background-size: cover;">
-    <div class="container hero-content">
-      <span class="eyebrow" style="color: #F87171; background: rgba(192, 18, 42, 0.2); border: 1px solid #C0122A; padding: 0.3rem 0.75rem; border-radius: 2px;">
-        CORE PILLAR 01
-      </span>
-      <h1 class="hero-title" style="color: #FFF;">PROFESSIONAL SECURITY &amp; SURVEILLANCE</h1>
-      <p class="hero-desc">
-        Disciplined, background-verified manned guarding, electronic CCTV monitoring, corporate access control, and proactive fire safety emergency readiness.
-      </p>
-    </div>
-  </section>
-
-  <section class="section-py bg-light">
+  <section class="hero-banner">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">SECURITY DIVISIONS</span>
-        <h2>7 SPECIALIZED SECURITY MODULES</h2>
-        <p>Tailored physical and technological protection frameworks designed for high-risk assets, corporate towers, and residential communities.</p>
-      </div>
-
-      <div class="grid-3" style="gap: 2rem;">
-        <!-- 01: Manned Guarding -->
-        <div class="card card-top-red" id="manned-guarding">
-          <div class="card-image-wrap">
-            <img src="assets/images/patrol.jpg" alt="Manned Guarding">
-            <span class="card-badge">01</span>
-          </div>
-          <h4>Manned Guarding</h4>
-          <p style="font-size: 0.9rem; margin-top: 0.35rem;">
-            Disciplined, uniformed security guards trained in access control, patrol procedures, incident logging, and gatekeeping.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>24/7 Static &amp; roving patrols</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Police &amp; background verified</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Visitor &amp; vehicle registration</span></li>
-          </ul>
-        </div>
-
-        <!-- 02: Corporate Security -->
-        <div class="card card-top-red" id="corporate-security">
-          <div class="card-image-wrap">
-            <img src="assets/images/corporate.jpg" alt="Corporate Security">
-            <span class="card-badge">02</span>
-          </div>
-          <h4>Corporate Security</h4>
-          <p style="font-size: 0.9rem; margin-top: 0.35rem;">
-            Specialized executive protection personnel tailored for corporate headquarters, tech parks, and commercial towers.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Front-desk concierge &amp; liaison</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Badge management &amp; turnstiles</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>After-hours floor security checks</span></li>
-          </ul>
-        </div>
-
-        <!-- 03: Crowd Management -->
-        <div class="card card-top-red" id="crowd-management">
-          <div class="card-image-wrap">
-            <img src="assets/images/team.jpg" alt="Crowd Management">
-            <span class="card-badge">03</span>
-          </div>
-          <h4>Crowd Management &amp; Events</h4>
-          <p style="font-size: 0.9rem; margin-top: 0.35rem;">
-            Operational crowd management protocols designed to prevent bottlenecks, ensure structured queuing, and maintain public safety.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Perimeter barricade coordination</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Throughput optimization</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Emergency evacuation clearance</span></li>
-          </ul>
-        </div>
-
-        <!-- 04: VIP Protection -->
-        <div class="card card-top-red" id="vip-protection">
-          <div class="card-image-wrap">
-            <img src="assets/images/security.jpg" alt="VIP Protection">
-            <span class="card-badge">04</span>
-          </div>
-          <h4>VIP &amp; Executive Protection</h4>
-          <p style="font-size: 0.9rem; margin-top: 0.35rem;">
-            Discreet personal protection officers trained in route surveying, close-quarter security escort, and risk avoidance.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Advance venue reconnaissance</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Close protection escort details</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Secure route planning</span></li>
-          </ul>
-        </div>
-
-        <!-- 05: CCTV Surveillance -->
-        <div class="card card-top-red" id="cctv-surveillance">
-          <div class="card-image-wrap">
-            <img src="assets/images/cctv.jpg" alt="CCTV Surveillance">
-            <span class="card-badge">05</span>
-          </div>
-          <h4>CCTV Surveillance &amp; Control</h4>
-          <p style="font-size: 0.9rem; margin-top: 0.35rem;">
-            Centralized control-room monitoring and live video oversight to detect anomalies and perimeter breaches in real time.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>24/7 Command-center feeds</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Incident playback &amp; archiving</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Rapid dispatch alert triggers</span></li>
-          </ul>
-        </div>
-
-        <!-- 06: Access Control -->
-        <div class="card card-top-red" id="access-control">
-          <div class="card-image-wrap">
-            <img src="assets/images/corporate.jpg" alt="Access Control Systems">
-            <span class="card-badge">06</span>
-          </div>
-          <h4>Access Control Systems</h4>
-          <p style="font-size: 0.9rem; margin-top: 0.35rem;">
-            Physical and electronic access enforcement restricting unauthorized entry, managing delivery vehicles, and securing restricted zones.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Biometric &amp; RFID validation</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Boom barrier &amp; gatepass systems</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Material in/out gate verification</span></li>
-          </ul>
-        </div>
-
-        <!-- 07: Fire Safety -->
-        <div class="card card-top-red" id="fire-safety">
-          <div class="card-image-wrap">
-            <img src="assets/images/hero.jpg" alt="Fire Safety and Emergency Response">
-            <span class="card-badge">07</span>
-          </div>
-          <h4>Fire Safety &amp; Emergency</h4>
-          <p style="font-size: 0.9rem; margin-top: 0.35rem;">
-            Security officers trained in basic firefighting, emergency response drills, fire extinguisher operation, and rapid building evacuation.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>First-responder fire fighting</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Emergency evacuation drills</span></li>
-            <li class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0122A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Fire exit clearance inspections</span></li>
-          </ul>
-        </div>
+      <div style="max-width: 800px;">
+        <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(192, 18, 42, 0.2); border: 1px solid #C0122A; color: #FFF; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem;">
+          DIVISION 01 // PROTECTION & VIGILANCE
+        </span>
+        <h1 style="font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 1.5rem;">
+          SECURITY SERVICES
+        </h1>
+        <p style="font-size: 1.125rem; color: #CBD5E1; line-height: 1.6;">
+          Professional protection, surveillance and security solutions for commercial, residential and industrial properties.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Security Audit CTA -->
-  <section class="section-py bg-white text-center">
-    <div class="container" style="max-width: 700px; margin: 0 auto; text-align: center;">
-      <span class="eyebrow">VULNERABILITY AUDIT</span>
-      <h2>SCHEDULE A COMPLIMENTARY SITE SECURITY AUDIT</h2>
-      <p style="margin-bottom: 2rem;">Our security supervisors will inspect your perimeter, access points, and emergency routes to produce an actionable security deployment plan.</p>
-      <button type="button" class="btn btn-primary btn-lg" data-open-modal="enquiry" data-service="Security Services">REQUEST SECURITY AUDIT</button>
-    </div>
-  </section>
-
-  </main>
-
-  <!-- Global Footer -->
-  <footer class="site-footer">
+  <section class="section-py">
     <div class="container">
-      <div class="footer-grid">
-        <!-- Col 1: Brand Info -->
-        <div class="footer-col">
-          <div style="margin-bottom: 1.25rem;">
-            <img src="assets/logo/ssv-logo.svg" alt="SSV Commercial Services & Infra" width="220" height="48" style="filter: brightness(0) invert(1);">
-          </div>
-          <p style="font-size: 0.875rem; color: #94A3B8; margin-bottom: 1rem; line-height: 1.6;">
-            <strong>SSV COMMERCIAL SERVICES & INFRA PRIVATE LIMITED</strong> provides professional security, housekeeping, and infrastructure solutions for commercial, residential, and industrial environments across Maharashtra.
-          </p>
-          <div style="font-size: 0.8125rem; color: #CBD5E1; line-height: 1.6;">
-            <strong>Operational HQ:</strong><br>
-            Chhatrapati Sambhaji Maharaj Nagar,<br>
-            Behind DIC Office, Dharashiv, Maharashtra - 413501
-          </div>
-        </div>
-
-        <!-- Col 2: Core Pillars -->
-        <div class="footer-col">
-          <h4>Core Pillars</h4>
-          <div class="footer-links">
-            <a href="security.html">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              Security Services
-            </a>
-            <a href="housekeeping.html">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              Housekeeping Services
-            </a>
-            <a href="infrastructure.html">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              Infra & Civil Projects
-            </a>
-            <a href="services.html">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              Integrated Facility Solutions
-            </a>
-          </div>
-        </div>
-
-        <!-- Col 3: Quick Navigation -->
-        <div class="footer-col">
-          <h4>Company Links</h4>
-          <div class="footer-links">
-            <a href="about.html">About SSV</a>
-            <a href="industries.html">Industries Served</a>
-            <a href="why-ssv.html">Why SSV Advantage</a>
-            <a href="contact.html">Contact & Headquarters</a>
-            <a href="#" data-open-modal="enquiry">Request Quote</a>
-          </div>
-        </div>
-
-        <!-- Col 4: 24/7 Command -->
-        <div class="footer-col">
-          <h4>24/7 Support & Command</h4>
-          <p style="font-size: 0.8125rem; color: #94A3B8; margin-bottom: 1rem;">
-            Direct phone lines and prompt operational response for commercial facilities.
-          </p>
-          <div style="margin-bottom: 0.75rem;">
-            <a href="tel:+918669005122" class="btn btn-primary btn-sm btn-block">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              CALL: +91 86690 05122
-            </a>
-          </div>
-          <div>
-            <a href="https://wa.me/918669005122" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm btn-block">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              WHATSAPP INQUIRY
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
+      <!-- 01 Manned Guarding -->
+      <div class="service-row">
         <div>
-          &copy; <span id="currentYear">2026</span> SSV Commercial Services & Infra Private Limited. All rights reserved.
+          <span style="color: #C0122A; font-weight: 900; font-family: monospace;">01</span>
+          <h2 style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin: 0.25rem 0 1rem;">Manned Guarding</h2>
+          <p style="color: #5A6273; line-height: 1.6; margin-bottom: 1rem;">Trained security guards stationed on-site for continuous physical protection, visitor screening, and emergency readiness.</p>
+          <ul style="color: #001423; font-size: 0.875rem; line-height: 1.8; margin-bottom: 1.5rem;">
+            <li>✓ 100% Background verified guards</li>
+            <li>✓ 24/7 Day and night shift rosters</li>
+            <li>✓ Visitor registry & pass management</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">DEPLOY GUARDS</a>
         </div>
-        <div style="font-size: 0.75rem; color: #64748B;">
-          ISO Compliant Protocols • Vetted & Trained Personnel • Fully Licensed Operations
+        <div>
+          <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=85" alt="Manned Guarding" style="width: 100%; border-radius: 2px;">
         </div>
       </div>
+
+      <!-- 02 CCTV & Surveillance -->
+      <div class="service-row">
+        <div style="order: 2;">
+          <span style="color: #C0122A; font-weight: 900; font-family: monospace;">05</span>
+          <h2 style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin: 0.25rem 0 1rem;">CCTV Surveillance & Monitoring</h2>
+          <p style="color: #5A6273; line-height: 1.6; margin-bottom: 1rem;">Round-the-clock video monitoring solutions with proactive threat identification, recorded footage archiving, and alarm dispatch.</p>
+          <a href="contact.html" class="btn-primary">SETUP SURVEILLANCE</a>
+        </div>
+        <div style="order: 1;">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=85" alt="CCTV Surveillance" style="width: 100%; border-radius: 2px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #000E1A; color: #CBD5E1; padding: 3rem 0; border-top: 2px solid #C0122A; text-align: center; font-size: 0.85rem;">
+    <div class="container">
+      © 2026 SSV Commercial Services & Infra Private Limited • Call: +91 86690 05122
     </div>
   </footer>
-
-  <!-- Sticky Mobile Action Bar -->
-  <div class="mobile-action-bar" id="mobileActionBar">
-    <a href="tel:+918669005122" class="mobile-action-btn call-btn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-      Call
-    </a>
-    <a href="https://wa.me/918669005122?text=Hello%20SSV%20Team%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="mobile-action-btn whatsapp-btn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-      WhatsApp
-    </a>
-    <button type="button" class="mobile-action-btn enquire-btn" data-open-modal="enquiry">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-      Enquire
-    </button>
-  </div>
-
-  <!-- Enquiry Modal Popup -->
-  <div class="modal-overlay" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modalTitle">Request Service Proposal</h3>
-        <button type="button" class="modal-close" data-close-modal aria-label="Close dialog">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.875rem; color: #5A6273; margin-bottom: 1.25rem;">
-          Fill out the brief requirements below. Our operational command team will analyze your site and respond with a formal quote within 4 hours.
-        </p>
-        <form data-ssv-form id="modalEnquiryForm">
-          <div class="form-group">
-            <label class="form-label" for="mName">Full Name *</label>
-            <input type="text" id="mName" name="name" class="form-control" placeholder="Enter your name" required>
-          </div>
-          <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
-            <div class="form-group">
-              <label class="form-label" for="mPhone">Phone Number *</label>
-              <input type="tel" id="mPhone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="mEmail">Work Email</label>
-              <input type="email" id="mEmail" name="email" class="form-control" placeholder="name@company.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="mService">Service Requirement *</label>
-            <select id="mService" name="service" class="form-control" required>
-              <option value="">Select Service Category</option>
-              <option value="Security Services">Security Services (Manned Guarding / CCTV / Access)</option>
-              <option value="Housekeeping Services">Housekeeping & Sanitization Services</option>
-              <option value="Infra Services">Infrastructure, Utility Shifting & Road Construction</option>
-              <option value="Integrated Solution">Integrated Total Facility Package</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="mLocation">Site Location / City</label>
-            <input type="text" id="mLocation" name="location" class="form-control" placeholder="e.g., Dharashiv, Pune, Solapur, Aurangabad">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="mMessage">Brief Requirement Details</label>
-            <textarea id="mMessage" name="message" class="form-control" placeholder="Describe facility size, number of guards, or civil work scope..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 0.5rem;">
-            SUBMIT REQUIREMENT
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Local Script -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

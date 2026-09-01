@@ -5,10 +5,11 @@ import { INDUSTRIES_LIST, COMPANY_INFO } from '../data/content';
 import { IMAGES } from '../data/images';
 
 interface IndustriesPageProps {
-  onOpenEnquiry: (service?: string) => void;
+  onNavigate?: (page: string) => void;
+  onOpenEnquiry?: (service?: string) => void;
 }
 
-export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onOpenEnquiry }) => {
+export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const categories = ['all', 'Commercial', 'Industrial', 'Residential', 'Retail', 'Hospitality', 'Healthcare', 'Infrastructure'];
@@ -114,10 +115,12 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onOpenEnquiry })
 
                 <div className="p-6 pt-0">
                   <button
-                    onClick={() => onOpenEnquiry(ind.title)}
+                    onClick={() => {
+                      if (onNavigate) onNavigate('contact');
+                    }}
                     className="w-full py-2.5 bg-[#F6F8FA] hover:bg-[#C0122A] hover:text-white text-[#001423] text-xs font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2 border border-slate-200"
                   >
-                    <span>Request Sector Proposal</span>
+                    <span>Contact Operations Desk</span>
                     <ArrowRightIcon size={12} />
                   </button>
                 </div>
