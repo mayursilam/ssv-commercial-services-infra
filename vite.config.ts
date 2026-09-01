@@ -3,7 +3,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: './',
     build: {
+      outDir: 'dist',
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'index.html'),
@@ -15,6 +17,7 @@ export default defineConfig(() => {
           industries: path.resolve(__dirname, 'industries.html'),
           whySsv: path.resolve(__dirname, 'why-ssv.html'),
           contact: path.resolve(__dirname, 'contact.html'),
+          notFound: path.resolve(__dirname, '404.html'),
         },
       },
     },
