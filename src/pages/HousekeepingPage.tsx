@@ -38,7 +38,7 @@ export const HousekeepingPage: React.FC<HousekeepingPageProps> = ({ onNavigate }
               CLEANER SPACES.<br />BETTER ENVIRONMENTS.
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Industrial scrubbing machines, hospital-grade eco-friendly cleaning agents, and trained housekeeping staff delivering spotless hygiene across commercial, factory, and residential spaces.
+              Modern cleaning machinery, eco-friendly cleaning practices, and trained housekeeping staff delivering spotless hygiene across commercial, factory, and residential spaces.
             </p>
             <div className="pt-2">
               <button
@@ -64,10 +64,10 @@ export const HousekeepingPage: React.FC<HousekeepingPageProps> = ({ onNavigate }
               HYGIENE & CLEANING PORTFOLIO
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#001423] font-gotham uppercase">
-              MECHANIZED FACILITY CARE
+              SYSTEMATIC FACILITY CARE
             </h2>
             <p className="text-sm text-[#5A6273]">
-              From daily corporate workspace upkeep to high-pressure industrial plant degreasing and pest management.
+              From daily corporate workspace upkeep to industrial and factory cleaning and pest management.
             </p>
           </div>
 
@@ -145,16 +145,16 @@ export const HousekeepingPage: React.FC<HousekeepingPageProps> = ({ onNavigate }
       <section className="py-16 bg-[#001423] text-white border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
           <div className="p-5 bg-[#031B2D] border border-[#0F3759] rounded-sm space-y-1.5">
-            <h4 className="text-sm font-bold text-white uppercase">Mechanized Cleaning</h4>
-            <p className="text-xs text-slate-300">Ride-on scrubbers, wet/dry vacuums, and high-pressure steam washers.</p>
+            <h4 className="text-sm font-bold text-white uppercase">Deep Cleaning & Sanitization</h4>
+            <p className="text-xs text-slate-300">Comprehensive deep cleaning and sanitization solutions.</p>
           </div>
           <div className="p-5 bg-[#031B2D] border border-[#0F3759] rounded-sm space-y-1.5">
-            <h4 className="text-sm font-bold text-white uppercase">Eco-Friendly Chemicals</h4>
-            <p className="text-xs text-slate-300">Biodegradable, non-toxic cleaning agents safe for indoor air quality.</p>
+            <h4 className="text-sm font-bold text-white uppercase">Eco-Friendly Cleaning Practices</h4>
+            <p className="text-xs text-slate-300">Eco-friendly, non-toxic cleaning practices safe for indoor air quality.</p>
           </div>
           <div className="p-5 bg-[#031B2D] border border-[#0F3759] rounded-sm space-y-1.5">
-            <h4 className="text-sm font-bold text-white uppercase">Structured Rosters</h4>
-            <p className="text-xs text-slate-300">Color-coded microfibers, daily checklists, and supervisor spot audits.</p>
+            <h4 className="text-sm font-bold text-white uppercase">Customized Housekeeping Plans</h4>
+            <p className="text-xs text-slate-300">Daily checklists, shift schedules, and regular supervisor spot audits.</p>
           </div>
           <div className="p-5 bg-[#031B2D] border border-[#0F3759] rounded-sm space-y-1.5">
             <h4 className="text-sm font-bold text-white uppercase">Waste Segregation</h4>

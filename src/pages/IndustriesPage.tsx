@@ -120,7 +120,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
                     }}
                     className="w-full py-2.5 bg-[#F6F8FA] hover:bg-[#C0122A] hover:text-white text-[#001423] text-xs font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2 border border-slate-200"
                   >
-                    <span>Contact Operations Desk</span>
+                    <span>Contact Operations Team</span>
                     <ArrowRightIcon size={12} />
                   </button>
                 </div>

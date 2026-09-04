@@ -26,13 +26,6 @@ export interface ValuePillar {
   details: string[];
 }
 
-export interface ProcessStage {
-  number: string;
-  title: string;
-  subtitle: string;
-  description: string;
-}
-
 export const COMPANY_INFO = {
   legalName: 'SSV COMMERCIAL SERVICES & INFRA PRIVATE LIMITED',
   brandName: 'SSV',
@@ -49,7 +42,7 @@ export const COMPANY_INFO = {
     pincode: '413501',
     country: 'India'
   },
-  hours: '24/7 Operational Command & Emergency Support',
+  hours: 'Operational Support & Inquiry Line',
   colors: {
     red: '#C0122A',
     coolGray: '#848A99',
@@ -76,12 +69,12 @@ export const CORE_PILLARS = [
     id: 'housekeeping',
     title: 'HOUSEKEEPING SERVICES',
     shortDesc: 'Professional cleaning, hygiene management and complete facility upkeep.',
-    fullDesc: 'From high-traffic corporate offices and industrial factory floors to residential townships, SSV provides systematic hygiene management, mechanized cleaning, deep sanitization, and eco-friendly practices.',
+    fullDesc: 'From high-traffic corporate offices and industrial factory floors to residential townships, SSV provides systematic hygiene management, deep cleaning & sanitization, and eco-friendly practices.',
     link: 'housekeeping.html',
     pageKey: 'housekeeping',
     imageId: 'housekeepingStaff',
     accentColor: '#848A99',
-    stats: 'Hospital-Grade Hygiene'
+    stats: 'High Hygiene Standards'
   },
   {
     number: '03',
@@ -103,8 +96,8 @@ export const SECURITY_SERVICES_LIST: ServiceDetail[] = [
     number: '01',
     title: 'Manned Guarding',
     tagline: 'Vigilant on-ground physical protection',
-    description: 'Disciplined, uniformed security guards trained in access control, patrol procedures, incident logging, and gatekeeping for commercial, industrial, and residential properties.',
-    features: ['24/7 Static & roving patrols', 'Stringent background checks & verification', 'Visitor & vehicle registration logging', 'Emergency escalation readiness'],
+    description: 'Disciplined, uniformed security guards trained in access control, incident logging, and gatekeeping for commercial, industrial, and residential properties.',
+    features: ['Trained & disciplined guard shift coverage', 'Comprehensive background verification', 'Visitor & vehicle registration logging', 'Emergency escalation readiness'],
     imageId: 'securityGuard',
     link: 'security.html#manned-guarding',
     iconName: 'Shield'
@@ -147,8 +140,8 @@ export const SECURITY_SERVICES_LIST: ServiceDetail[] = [
     number: '05',
     title: 'CCTV Surveillance & Monitoring',
     tagline: 'Continuous electronic video surveillance',
-    description: 'Centralized control-room monitoring and live video oversight to detect anomalies, perimeter breaches, and operational hazards in real time.',
-    features: ['24/7 Dedicated command-center feeds', 'Incident playback & forensic archiving', 'Multi-camera zone coverage audits', 'Rapid dispatch alert integration'],
+    description: 'Continuous electronic video surveillance and monitoring to detect unauthorized access, anomalies, and operational hazards in real time.',
+    features: ['Dedicated video monitoring feeds', 'Incident playback & forensic archiving', 'Multi-camera zone coverage audits', 'Rapid alert integration'],
     imageId: 'cctvMonitoring',
     link: 'security.html#cctv-surveillance',
     iconName: 'Camera'
@@ -184,7 +177,7 @@ export const HOUSEKEEPING_SERVICES_LIST: ServiceDetail[] = [
     title: 'Commercial & Domestic Cleaning',
     tagline: 'Comprehensive daily hygiene for active spaces',
     description: 'Systematic cleaning solutions for workspaces, common lobbies, corridors, domestic estates, and commercial suites ensuring spotless presentation.',
-    features: ['Mechanized surface scrubbing & buffing', 'Glass & facade maintenance', 'Daily dusting, sweeping & vacuuming', 'Restroom sanitation & restocking'],
+    features: ['Deep cleaning & surface sanitization', 'Glass & facade maintenance', 'Daily dusting, sweeping & vacuuming', 'Restroom sanitation & restocking'],
     imageId: 'housekeepingStaff',
     link: 'housekeeping.html#commercial-cleaning',
     iconName: 'Sparkles'
@@ -195,7 +188,7 @@ export const HOUSEKEEPING_SERVICES_LIST: ServiceDetail[] = [
     title: 'Offices, Industrial & Factory Cleaning',
     tagline: 'Heavy-duty maintenance for production facilities',
     description: 'Industrial-grade cleaning for manufacturing plant floors, warehouses, machine shops, and engineering bays requiring strict compliance with safety norms.',
-    features: ['Oil & grease surface degreasing', 'High-ceiling & truss dust extraction', 'Warehouse floor scrubbing', 'Industrial waste disposal coordination'],
+    features: ['Industrial plant floor cleaning', 'High-ceiling & truss dust extraction', 'Warehouse floor maintenance', 'Industrial waste disposal coordination'],
     imageId: 'industrialCleaning',
     link: 'housekeeping.html#industrial-cleaning',
     iconName: 'Building'
@@ -215,9 +208,9 @@ export const HOUSEKEEPING_SERVICES_LIST: ServiceDetail[] = [
     id: 'deep-sanitization',
     number: '04',
     title: 'Deep Cleaning & Sanitization',
-    tagline: 'Intensive hospital-grade disinfection',
+    tagline: 'Deep sanitization & intensive surface disinfection',
     description: 'Periodic deep cleaning programs utilizing certified eco-friendly disinfectants and high-pressure steam extraction for carpets, upholstery, and critical touchpoints.',
-    features: ['Hospital-grade surface sanitization', 'Carpet shampooing & upholstery extraction', 'Tile grout & deep stain removal', 'Touchpoint antimicrobial treatment'],
+    features: ['Comprehensive surface sanitization', 'Carpet shampooing & upholstery extraction', 'Tile grout & deep stain removal', 'High-touch surface disinfection'],
     imageId: 'deepSanitization',
     link: 'housekeeping.html#deep-sanitization',
     iconName: 'Droplets'
@@ -272,10 +265,10 @@ export const INFRASTRUCTURE_MODULES: ServiceDetail[] = [
   {
     id: 'road-construction',
     number: '03',
-    title: 'Road Construction',
-    tagline: 'Durable road paving & civil connectivity',
+    title: 'Industrial Roads & Construction',
+    tagline: 'Durable industrial roads & civil connectivity',
     description: 'Construction and resurfacing of industrial access corridors, arterial roadways, concrete pavements, and internal township roads designed for heavy load cycles.',
-    features: ['Sub-base grading & compaction', 'Bituminous asphalt paving & concrete paving', 'Stormwater drainage gutter integration', 'Road curb, divider & signage installation'],
+    features: ['Sub-base grading & compaction', 'Bituminous asphalt & concrete industrial roads', 'Stormwater drainage gutter integration', 'Road curb, divider & signage installation'],
     imageId: 'roadConstruction',
     link: 'infrastructure.html#road-construction',
     iconName: 'Road'
@@ -299,7 +292,7 @@ export const INDUSTRIES_LIST: IndustryItem[] = [
     title: 'Commercial Complexes',
     category: 'Commercial',
     description: 'Integrated security, housekeeping, and civil upkeep for Grade-A corporate towers, business parks, and multi-tenant office complexes.',
-    solutions: ['Access control turnstiles', 'Mechanized daily cleaning', 'Lobby security concierge', 'Preventive infrastructure care'],
+    solutions: ['Access control turnstiles', 'Comprehensive daily cleaning', 'Lobby security concierge', 'Preventive infrastructure care'],
     imageId: 'commercialArchitecture'
   },
   {
@@ -307,7 +300,7 @@ export const INDUSTRIES_LIST: IndustryItem[] = [
     title: 'Industrial & Manufacturing',
     category: 'Industrial',
     description: 'Rigorous perimeter defense, material gate passes, hazardous waste handling, and heavy-duty factory floor cleaning for industrial plants.',
-    solutions: ['Material in/out gate logging', 'Plant floor degreasing', 'Perimeter security patrol', 'Utility infrastructure upkeep'],
+    solutions: ['Material in/out gate logging', 'Industrial plant floor cleaning', 'Security for Private & Public Open Land Properties', 'Utility infrastructure upkeep'],
     imageId: 'industrialFacility'
   },
   {
@@ -323,7 +316,7 @@ export const INDUSTRIES_LIST: IndustryItem[] = [
     title: 'Retail & Shopping Malls',
     category: 'Retail',
     description: 'Active crowd management, loss prevention, continuous high-traffic floor buffing, and restroom sanitation for bustling retail environments.',
-    solutions: ['High-footfall crowd control', 'Continuous floor scrubbing', 'Emergency exit monitoring', 'Waste segregation'],
+    solutions: ['High-footfall crowd control', 'Deep cleaning & sanitization', 'Emergency exit monitoring', 'Waste segregation'],
     imageId: 'retailMall'
   },
   {
@@ -347,7 +340,7 @@ export const INDUSTRIES_LIST: IndustryItem[] = [
     title: 'Construction & Civil Projects',
     category: 'Infrastructure',
     description: 'Material security, heavy machinery safety watch, on-site utility shifting, and turnkey civil execution for active construction developments.',
-    solutions: ['Material theft prevention', 'Heavy equipment security', 'On-site utility shifting', 'Civil road & paving works'],
+    solutions: ['Material theft prevention', 'Heavy equipment security', 'On-site utility shifting', 'Civil & industrial roads'],
     imageId: 'constructionSite'
   },
   {
@@ -355,7 +348,7 @@ export const INDUSTRIES_LIST: IndustryItem[] = [
     title: 'IT & Technology Parks',
     category: 'Commercial',
     description: '24/7 multi-tier perimeter protection, server room access authorization, and clean room maintenance for technology campuses.',
-    solutions: ['24/7 Command surveillance', 'Restricted server room security', 'Anti-static floor cleaning', 'Rapid incident response'],
+    solutions: ['24/7 CCTV surveillance', 'Restricted server room security', 'Anti-static floor cleaning', 'Rapid incident response'],
     imageId: 'itTechPark'
   },
   {
@@ -363,7 +356,7 @@ export const INDUSTRIES_LIST: IndustryItem[] = [
     title: 'Public & Open Land Environments',
     category: 'Infrastructure',
     description: 'Large-scale open land boundary fencing, utility diversion, road grading, and perimeter security to safeguard strategic land assets.',
-    solutions: ['Perimeter boundary fencing', 'Encroachment prevention patrols', 'Land leveling & grading', 'Utility corridor shifting'],
+    solutions: ['Perimeter boundary fencing', 'Encroachment prevention watch', 'Land leveling & grading', 'Utility corridor shifting'],
     imageId: 'urbanInfra'
   }
 ];
@@ -384,63 +377,30 @@ export const VALUE_PILLARS: ValuePillar[] = [
   {
     number: '03',
     title: 'Cost-Effective Solutions',
-    description: 'Delivering uncompromised quality without fiscal bloat. Through mechanized efficiency, streamlined labor deployment, and turnkey infrastructure execution, we optimize your total operational spend.',
+    description: 'Delivering uncompromised quality without fiscal bloat. Through cost-effective operations, streamlined labor deployment, and turnkey infrastructure execution, we optimize your total operational spend.',
     details: ['Elimination of operational redundancies', 'Optimized resource allocation matrices', 'Transparent, milestone-based commercial terms', 'Measurable cost-efficiency metrics']
   },
   {
     number: '04',
     title: 'Advanced Technology & Equipment',
-    description: 'From modern CCTV surveillance control rooms and biometric access logging to industrial floor scrubbers and heavy civil machinery, we leverage the right tools for superior results.',
-    details: ['Industrial ride-on & walk-behind scrubbers', 'High-definition digital surveillance integration', 'Standardized reporting & incident registers', 'Certified heavy earthmoving & paving equipment']
+    description: 'From modern electronic video surveillance and biometric access logging to specialized cleaning machinery and heavy civil equipment, we leverage the right tools for superior results.',
+    details: ['Specialized cleaning machinery & scrubbers', 'High-definition digital surveillance integration', 'Standardized reporting & incident registers', 'Certified heavy earthmoving & road construction equipment']
   },
   {
     number: '05',
     title: 'Commitment to Excellence',
     description: 'Integrity, safety, and operational excellence guide every deployment. We maintain strict compliance with all statutory labor laws, safety standards, and environmental practices.',
-    details: ['100% Statutory & labor law compliance', 'Zero-tolerance safety policies', 'Eco-friendly cleaning agents & practices', 'Consistent SLA benchmark delivery']
+    details: ['Statutory & labor law compliance', 'Zero-tolerance safety policies', 'Eco-friendly cleaning agents & practices', 'Consistent service quality delivery']
   }
 ];
 
 export const QUALITATIVE_STRENGTHS = [
   { title: 'Highly Trained Personnel', desc: 'Rigorous physical, tactical, and etiquette training for all security and service staff.' },
   { title: 'Customized Service Plans', desc: 'Site-specific standard operating procedures tailored to your exact property.' },
-  { title: 'Comprehensive Cleaning Solutions', desc: 'End-to-end cleaning from daily upkeep to specialized industrial degreasing.' },
-  { title: 'Trained & Skilled Workforce', desc: 'Certified operators for modern equipment and heavy civil infrastructure machinery.' },
-  { title: 'Eco-Friendly Cleaning Practices', desc: 'Biodegradable, non-toxic cleaning agents that protect health and environment.' },
-  { title: '24/7 Support & Quick Response', desc: 'Always-available operational command line and rapid emergency response teams.' },
+  { title: 'Comprehensive Cleaning Solutions', desc: 'End-to-end cleaning from daily corporate upkeep to deep industrial and factory sanitization.' },
+  { title: 'Trained & Skilled Workforce', desc: 'Certified operators for advanced technology & equipment and heavy civil infrastructure machinery.' },
+  { title: 'Eco-Friendly Cleaning Practices', desc: 'Safe, eco-friendly cleaning practices that protect health and the environment.' },
+  { title: 'Responsive Support & Quick Response', desc: 'Operational support helpline and responsive on-ground teams.' },
   { title: 'Safety & Hygiene Standards', desc: 'Strict adherence to health protocols, PPE compliance, and fire safety norms.' },
   { title: 'Customizable Service Packages', desc: 'Modular service contracts that scale flexibly as your enterprise grows.' }
-];
-
-export const PROCESS_STAGES: ProcessStage[] = [
-  {
-    number: '01',
-    title: 'UNDERSTAND',
-    subtitle: 'Comprehensive Site Survey & Risk Assessment',
-    description: 'Our senior specialists visit your site to analyze vulnerabilities, traffic flows, layout geometry, hygiene pain points, or infrastructure requirements.'
-  },
-  {
-    number: '02',
-    title: 'PLAN',
-    subtitle: 'Tailored Solution Architecture & SOP Design',
-    description: 'We construct a customized operational blueprint detailing guard deployment rosters, cleaning frequency charts, material specs, and project milestones.'
-  },
-  {
-    number: '03',
-    title: 'DEPLOY',
-    subtitle: 'Trained Workforce & Equipment Induction',
-    description: 'We place vetted, uniformed personnel, install necessary machinery, establish logbooks, and brief teams on site-specific emergency protocols.'
-  },
-  {
-    number: '04',
-    title: 'MANAGE',
-    subtitle: 'Active Supervision & SLA Compliance',
-    description: 'On-ground supervisors conduct surprise night patrols, hygiene spot audits, and milestone reviews to ensure seamless daily execution.'
-  },
-  {
-    number: '05',
-    title: 'IMPROVE',
-    subtitle: 'Continuous Review & Protocol Optimization',
-    description: 'Periodic client reviews and operational feedback loops allow us to continuously refine procedures, enhance safety, and drive efficiency.'
-  }
 ];

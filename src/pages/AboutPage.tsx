@@ -112,7 +112,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckIcon size={14} color="#C0122A" />
-                  <span>Maintaining hospital-grade hygiene and mechanized cleaning</span>
+                  <span>Maintaining high hygiene standards and deep cleaning & sanitization</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckIcon size={14} color="#C0122A" />
@@ -203,11 +203,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Headquarter & Regional Hub */}
+      {/* Corporate Office */}
       <section className="py-16 bg-[#000E1A] text-white border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C0122A]">REGIONAL HEADQUARTERS</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C0122A]">HEAD OFFICE</span>
             <h3 className="text-2xl font-bold font-gotham text-white mt-1">Dharashiv, Maharashtra</h3>
             <p className="text-xs text-slate-400 mt-1">{COMPANY_INFO.address.line1}, {COMPANY_INFO.address.line2}</p>
           </div>

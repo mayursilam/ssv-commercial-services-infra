@@ -10,7 +10,7 @@ import {
 import { 
   COMPANY_INFO, CORE_PILLARS, SECURITY_SERVICES_LIST, 
   HOUSEKEEPING_SERVICES_LIST, INFRASTRUCTURE_MODULES, 
-  INDUSTRIES_LIST, VALUE_PILLARS, QUALITATIVE_STRENGTHS, PROCESS_STAGES 
+  INDUSTRIES_LIST, VALUE_PILLARS, QUALITATIVE_STRENGTHS 
 } from '../data/content';
 import { IMAGES } from '../data/images';
 
@@ -149,7 +149,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="space-y-1">
                   <span className="text-2xl sm:text-3xl font-black text-[#848A99]">02</span>
                   <p className="text-xs font-bold uppercase tracking-wider text-[#001423]">Cleanliness</p>
-                  <p className="text-[11px] text-[#848A99]">Mechanized housekeeping</p>
+                  <p className="text-[11px] text-[#848A99]">Systematic housekeeping</p>
                 </div>
                 <div className="space-y-1">
                   <span className="text-2xl sm:text-3xl font-black text-[#C0122A]">03</span>
@@ -184,7 +184,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 />
 
                 <div className="absolute bottom-6 left-6 right-6 bg-[#001423]/95 backdrop-blur-md p-4 text-white border-l-4 border-[#C0122A] shadow-xl">
-                  <p className="text-xs font-bold tracking-wider uppercase text-slate-300">Operational Philosophy</p>
+                  <p className="text-xs font-bold tracking-wider uppercase text-slate-300">Operational Standard</p>
                   <p className="text-sm font-semibold text-white mt-0.5">
                     "The people, systems and infrastructure behind better spaces."
                   </p>
@@ -320,7 +320,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
               <div className="absolute bottom-4 left-4 right-4 bg-[#001423]/95 border border-white/10 p-4 text-white text-xs space-y-1">
                 <div className="font-bold uppercase tracking-wider text-[#C0122A]">Standard Operating Procedure</div>
-                <div className="text-slate-300">Vetted personnel, logbook enforcement, and 24/7 patrol shifts.</div>
+                <div className="text-slate-300">Vetted personnel, logbook enforcement, and disciplined shift rosters.</div>
               </div>
             </div>
 
@@ -366,7 +366,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <span className="text-[#848A99]">BETTER</span> ENVIRONMENTS.
               </h2>
               <p className="text-sm sm:text-base text-[#5A6273] leading-relaxed">
-                We combine trained housekeeping personnel with mechanized scrubbing technology, eco-friendly sanitization agents, and strict waste management workflows to maintain pristine environments.
+                We combine trained housekeeping personnel with deep cleaning & sanitization solutions, eco-friendly cleaning practices, and strict waste management workflows to maintain pristine environments.
               </p>
             </div>
 
@@ -514,7 +514,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 TAILORED INDUSTRY SOLUTIONS
               </h2>
               <p className="text-sm text-[#5A6273]">
-                Specialized operational standards designed for diverse sector requirements across Maharashtra.
+                Specialized operational standards designed for diverse sector requirements. Based in Dharashiv, Maharashtra.
               </p>
             </div>
 
@@ -644,7 +644,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 alt="SSV operational management and field supervisors"
                 aspectRatio="video"
                 containerClassName="rounded-sm shadow-xl border border-slate-300"
-                badge="LEADERSHIP & COMPLIANCE"
+                badge="GOVERNANCE & COMPLIANCE"
               />
             </div>
           </div>
@@ -713,7 +713,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* ========================================================
-          SECTION 10 - PROCESS TIMELINE
+          SECTION 10 - VALUE PILLARS
           ======================================================== */}
       <section className="py-20 bg-[#F6F8FA] border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -721,21 +721,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <div className="inline-flex items-center gap-2">
               <span className="w-2 h-2 bg-[#C0122A]" />
               <span className="text-xs font-bold tracking-[0.2em] text-[#848A99] uppercase">
-                SYSTEMATIC DEPLOYMENT
+                WHY CHOOSE SSV
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-[#001423] font-gotham uppercase">
-              FIVE-STAGE OPERATIONAL ROADMAP
+              FIVE PILLARS OF OPERATIONAL ADVANTAGE
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {PROCESS_STAGES.map((step) => (
-              <div key={step.number} className="bg-white border border-slate-200 p-5 rounded-sm space-y-2 relative">
-                <div className="text-xs font-mono font-bold text-[#C0122A]">{step.number}</div>
-                <h4 className="text-base font-black text-[#001423] uppercase">{step.title}</h4>
-                <div className="text-[11px] font-semibold text-[#848A99]">{step.subtitle}</div>
-                <p className="text-xs text-[#5A6273] leading-relaxed pt-1">{step.description}</p>
+            {VALUE_PILLARS.map((vp) => (
+              <div key={vp.number} className="bg-white border border-slate-200 p-5 rounded-sm space-y-2 relative">
+                <div className="text-xs font-mono font-bold text-[#C0122A]">{vp.number}</div>
+                <h4 className="text-base font-black text-[#001423] uppercase">{vp.title}</h4>
+                <p className="text-xs text-[#5A6273] leading-relaxed pt-1">{vp.description}</p>
               </div>
             ))}
           </div>
@@ -760,7 +759,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </h2>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Connect directly with our operational leadership in Dharashiv, Maharashtra for rapid security deployment, mechanized housekeeping, and infrastructure project consultation.
+              Connect directly with our operational management in Dharashiv, Maharashtra for rapid security deployment, housekeeping services, and infrastructure project consultation.
             </p>
           </div>
 
@@ -869,7 +868,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <MapPinIcon size={22} color="#C0122A" />
               </div>
               <div>
-                <div className="text-xs font-bold text-[#C0122A] uppercase tracking-wider">Registered Corporate Office</div>
+                <div className="text-xs font-bold text-[#C0122A] uppercase tracking-wider">Head Office</div>
                 <div className="text-sm font-bold text-white mt-0.5">{COMPANY_INFO.address.line1}, {COMPANY_INFO.address.line2}</div>
                 <div className="text-xs text-slate-400">{COMPANY_INFO.address.state} - {COMPANY_INFO.address.pincode}, {COMPANY_INFO.address.country} (Dharashiv, Maharashtra)</div>
               </div>

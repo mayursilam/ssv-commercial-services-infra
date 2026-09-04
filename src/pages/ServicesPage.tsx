@@ -112,7 +112,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                 HOUSEKEEPING SERVICES
               </h2>
               <p className="text-sm sm:text-base text-[#5A6273] leading-relaxed">
-                Comprehensive commercial and domestic cleaning, mechanized industrial plant maintenance, hospital-grade deep sanitization, waste segregation, and eco-friendly pest control.
+                Comprehensive commercial and domestic cleaning, industrial & factory maintenance, deep cleaning & sanitization, waste segregation, and eco-friendly pest control.
               </p>
               <div className="pt-2">
                 <button
@@ -204,7 +204,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
             NEED A CUSTOMIZED SERVICE COMBINATION?
           </h3>
           <p className="text-xs sm:text-sm text-[#5A6273]">
-            Our supervisors can bundle security guards, daily mechanized housekeeping, and facility civil upkeep under a single monthly SLA.
+            Our team can bundle security personnel, daily housekeeping, and facility civil upkeep under a consolidated service plan.
           </p>
           <div className="pt-2">
             <button

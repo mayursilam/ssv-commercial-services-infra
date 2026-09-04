@@ -38,7 +38,7 @@ export const SecurityPage: React.FC<SecurityPageProps> = ({ onNavigate }) => {
               ENSURING SAFETY & PERIMETER DEFENSE
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Tailored protection frameworks combining vetted security officers, strict access management, command-center video monitoring, and emergency response teams.
+              Tailored protection frameworks combining vetted security officers, strict access management, central video monitoring, and emergency response teams.
             </p>
             <div className="pt-2">
               <button
@@ -145,8 +145,8 @@ export const SecurityPage: React.FC<SecurityPageProps> = ({ onNavigate }) => {
       <section className="py-16 bg-[#001423] text-white border-t-2 border-[#C0122A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center sm:text-left">
           <div className="p-6 bg-[#031B2D] border border-[#0F3759] rounded-sm space-y-2">
-            <h4 className="text-base font-bold text-[#C0122A] uppercase">100% Background Verified</h4>
-            <p className="text-xs text-slate-300">All security guards undergo identity verification, address authentication, and criminal record screening.</p>
+            <h4 className="text-base font-bold text-[#C0122A] uppercase">Vetted & Verified Guards</h4>
+            <p className="text-xs text-slate-300">Security personnel undergo identity verification, address authentication, and background screening.</p>
           </div>
           <div className="p-6 bg-[#031B2D] border border-[#0F3759] rounded-sm space-y-2">
             <h4 className="text-base font-bold text-white uppercase">24/7 Field Patrol Audits</h4>

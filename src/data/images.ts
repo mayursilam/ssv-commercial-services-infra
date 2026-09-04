@@ -26,13 +26,13 @@ export const IMAGES: Record<string, ImageAsset> = {
     alt: 'Uniformed security professional providing vigilant manned guarding at commercial property',
     caption: 'Trained and verified security personnel for 24/7 perimeter protection'
   },
-  // 3. CCTV monitoring room
+  // 3. CCTV monitoring setup
   cctvMonitoring: {
     id: 'cctvMonitoring',
-    title: 'CCTV Surveillance & Command Center',
+    title: 'CCTV & Video Surveillance Systems',
     category: 'security',
     url: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=85',
-    alt: 'High-tech CCTV video surveillance control room monitoring multi-zone operations',
+    alt: 'CCTV video surveillance monitoring multi-zone facility operations',
     caption: 'Continuous electronic surveillance and real-time incident detection'
   },
   // 4. Access control
@@ -95,8 +95,8 @@ export const IMAGES: Record<string, ImageAsset> = {
     title: 'Deep Cleaning & Sanitization',
     category: 'housekeeping',
     url: 'https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Specialized chemical sanitization and hospital-grade disinfection',
-    caption: 'Eco-friendly cleaning agents and strict health standards'
+    alt: 'Specialized deep cleaning and sanitization protocols',
+    caption: 'Eco-friendly cleaning practices and strict hygiene standards'
   },
   // 11. Modern facility
   facilityManagement: {
@@ -105,7 +105,7 @@ export const IMAGES: Record<string, ImageAsset> = {
     category: 'corporate',
     url: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=85',
     alt: 'Modern glass atrium showcasing complete commercial facility management',
-    caption: 'Harmonizing safety, hygiene and infrastructure under one SLA'
+    caption: 'Harmonizing safety, hygiene and infrastructure under integrated management'
   },
   // 12. Construction site / Heavy machinery
   constructionSite: {
@@ -137,11 +137,11 @@ export const IMAGES: Record<string, ImageAsset> = {
   // 15. Road construction
   roadConstruction: {
     id: 'roadConstruction',
-    title: 'Road Construction & Paving',
+    title: 'Industrial Roads & Construction',
     category: 'infrastructure',
     url: 'https://images.unsplash.com/photo-1584463699037-33634032d9db?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Asphalt paving machinery laying heavy-duty roadway pavement',
-    caption: 'High-durability arterial roads, industrial corridors and internal pavements'
+    alt: 'Road construction machinery developing heavy-duty industrial roadway',
+    caption: 'High-durability arterial roads, industrial corridors and internal roadways'
   },
   // 16. Urban infrastructure
   urbanInfra: {
@@ -222,7 +222,7 @@ export const IMAGES: Record<string, ImageAsset> = {
     category: 'about',
     url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=85',
     alt: 'Diverse operational leaders reviewing service quality and safety compliance reports',
-    caption: 'Dedicated supervisors ensuring SLA adherence across all client properties'
+    caption: 'Dedicated supervisors ensuring service standards across all client properties'
   },
   // 25. Corporate contact environment
   contactCorporate: {

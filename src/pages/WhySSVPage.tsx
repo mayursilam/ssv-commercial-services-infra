@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeImage } from '../components/SafeImage';
 import { CheckIcon, ArrowRightIcon, ShieldIcon, SparklesIcon, ConstructionIcon } from '../components/Icons';
-import { VALUE_PILLARS, QUALITATIVE_STRENGTHS, PROCESS_STAGES, COMPANY_INFO } from '../data/content';
+import { VALUE_PILLARS, QUALITATIVE_STRENGTHS, COMPANY_INFO } from '../data/content';
 import { IMAGES } from '../data/images';
 
 interface WhySSVPageProps {
@@ -35,7 +35,7 @@ export const WhySSVPage: React.FC<WhySSVPageProps> = ({ onNavigate }) => {
               WHY SSV COMMERCIAL SERVICES & INFRA
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              We stand apart through disciplined governance, trained and verified manpower, modern mechanized equipment, transparent reporting, and turnkey execution.
+              We stand apart through disciplined governance, trained and verified manpower, advanced technology & equipment, transparent reporting, and turnkey execution.
             </p>
           </div>
         </div>
@@ -111,36 +111,22 @@ export const WhySSVPage: React.FC<WhySSVPageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 5-Step Process */}
-      <section className="py-20 bg-[#FFFFFF]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold tracking-[0.2em] text-[#C0122A] uppercase">
-              OPERATIONAL TIMELINE
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#001423] font-gotham uppercase">
-              THE 5-STAGE DEPLOYMENT MODEL
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {PROCESS_STAGES.map((st) => (
-              <div key={st.number} className="p-5 bg-[#F6F8FA] border border-slate-200 rounded-sm space-y-2">
-                <span className="text-xs font-mono font-bold text-[#C0122A]">{st.number}</span>
-                <h4 className="text-base font-bold text-[#001423] uppercase">{st.title}</h4>
-                <p className="text-[11px] font-semibold text-[#848A99]">{st.subtitle}</p>
-                <p className="text-xs text-[#5A6273] leading-relaxed">{st.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
+      {/* Direct Consultation CTA */}
+      <section className="py-16 bg-[#F6F8FA] border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <h3 className="text-2xl sm:text-3xl font-black text-[#001423] font-gotham uppercase">
+            READY TO DISCUSS YOUR FACILITY OR INFRASTRUCTURE REQUIREMENTS?
+          </h3>
+          <p className="text-sm text-[#5A6273] leading-relaxed max-w-2xl mx-auto">
+            Connect directly with our operational management in Dharashiv for tailored security staffing, housekeeping maintenance, or turnkey civil project consultations.
+          </p>
+          <div>
             <button
               id="why-schedule-evaluation-btn"
               onClick={() => {
                 if (onNavigate) onNavigate('contact');
               }}
-              className="px-8 py-4 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-bold uppercase tracking-widest rounded-sm inline-flex items-center gap-2 shadow-md transition-all"
+              className="px-8 py-4 bg-[#C0122A] hover:bg-[#9E0E22] text-white text-xs font-bold uppercase tracking-widest rounded-sm inline-flex items-center gap-2 shadow-md transition-all cursor-pointer"
             >
               <span>SCHEDULE A SITE EVALUATION</span>
               <ArrowRightIcon size={14} />

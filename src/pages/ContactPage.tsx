@@ -31,7 +31,7 @@ export const ContactPage: React.FC = () => {
               <span className="text-[#C0122A]">CLEANER, BETTER</span> ENVIRONMENT.
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Connect directly with our operational leadership in Dharashiv, Maharashtra for rapid security deployment, mechanized housekeeping, and infrastructure project consultation.
+              Connect directly with our operational management in Dharashiv, Maharashtra for rapid security deployment, housekeeping services, and infrastructure project consultation.
             </p>
           </div>
         </div>
@@ -49,7 +49,7 @@ export const ContactPage: React.FC = () => {
                 DIRECT CONTACT CHANNELS
               </h2>
               <p className="text-sm text-[#5A6273]">
-                Immediate access to our central operations desk. Choose your preferred communication channel below.
+                Direct access to our central team. Choose your preferred communication channel below.
               </p>
             </div>
 
@@ -212,7 +212,7 @@ export const ContactPage: React.FC = () => {
                   <span>Operations Status: Active 24/7</span>
                 </div>
                 <div className="font-semibold text-slate-300">
-                  CIN Registered Private Limited Company
+                  Registered Private Limited Company
                 </div>
               </div>
             </div>
@@ -227,13 +227,13 @@ export const ContactPage: React.FC = () => {
                     <ShieldIcon size={18} color="#C0122A" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-black text-[#001423] uppercase">01 Security Operations Desk</h4>
+                    <h4 className="text-sm font-black text-[#001423] uppercase">01 Security Services</h4>
                     <p className="text-xs text-[#5A6273] mt-0.5">
                       Manned guarding deployments, CCTV surveillance setups, executive protection, and access control systems.
                     </p>
                     <div className="mt-2 flex items-center gap-3 text-xs">
                       <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="font-bold text-[#C0122A] hover:underline">
-                        Call Security Desk →
+                        Call Security Team →
                       </a>
                     </div>
                   </div>
@@ -244,13 +244,13 @@ export const ContactPage: React.FC = () => {
                     <SparklesIcon size={18} color="#848A99" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-black text-[#001423] uppercase">02 Housekeeping Operations Desk</h4>
+                    <h4 className="text-sm font-black text-[#001423] uppercase">02 Housekeeping Services</h4>
                     <p className="text-xs text-[#5A6273] mt-0.5">
-                      Commercial cleaning, mechanized scrubbing, deep sanitization, industrial floor care, and waste management.
+                      Commercial cleaning, deep cleaning & sanitization, industrial floor care, and waste management.
                     </p>
                     <div className="mt-2 flex items-center gap-3 text-xs">
                       <a href={COMPANY_INFO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#25D366] hover:underline">
-                        WhatsApp Housekeeping Desk →
+                        WhatsApp Housekeeping Team →
                       </a>
                     </div>
                   </div>
@@ -261,7 +261,7 @@ export const ContactPage: React.FC = () => {
                     <ConstructionIcon size={18} color="#001423" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-black text-[#001423] uppercase">03 Civil Infrastructure Desk</h4>
+                    <h4 className="text-sm font-black text-[#001423] uppercase">03 Infra Services</h4>
                     <p className="text-xs text-[#5A6273] mt-0.5">
                       Turnkey civil projects, utility shifting, road construction, industrial pavement, and site engineering works.
                     </p>
@@ -280,7 +280,7 @@ export const ContactPage: React.FC = () => {
                   OPERATIONAL COVERAGE
                 </div>
                 <div className="text-xs text-slate-300 leading-relaxed">
-                  Headquartered in <strong className="text-white">Dharashiv</strong>, with operational reach across <strong className="text-white">Solapur, Latur, Chhatrapati Sambhajinagar, Pune, and key industrial belts across Maharashtra</strong>.
+                  Headquartered and operating from <strong className="text-white">Dharashiv, Maharashtra</strong>. Based in Dharashiv, Maharashtra.
                 </div>
               </div>
             </div>
